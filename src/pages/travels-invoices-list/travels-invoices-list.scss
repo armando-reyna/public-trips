@@ -1,0 +1,60 @@
+travels-invoices-list-page {
+
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .invoices {}
+
+    .invoices__container {
+        display: flex;
+        // border: 1px solid green;
+    }
+
+    .invoices__left-size {
+        flex-grow: 1;
+        width: 100px;
+        // border: 1px solid red;
+    }
+
+    .invoices__amount-side {
+        width: 100px;
+        min-width: 100px;
+        // border: 1px solid blue;
+    }
+
+    .invoices__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 10px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .invoices__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+}

@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons *ngIf="modalMode" left>
+            <button ion-button (click)="viewCtrl.dismiss()">
+                <ion-icon name="arrow-back"></ion-icon> Atrás
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper expenses-transaction">
+        <div class="travels__row travels__title">
+            Selecciona tu transacción
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Aquí encontrarás las transacciones confirmadas por los comercios.
+        </div>
+
+        <button class="expenses-transaction__item" *ngFor="let transaction of _transactions" (click)="goToExpensesCreate(transaction)">
+            <div class="expenses-transaction__left">
+                <div class="expenses-transaction__title">
+                    Nº Autorización:
+                    <span class="expenses-transaction__light"> {{ transaction['numAutorizacion'] }}</span>
+                </div>
+                <div class="expenses-transaction__subtitle">
+                    {{ transaction['nombreComercio']}}
+                </div>
+            </div>
+            <div class="expenses-transaction__right">
+                <div class="expenses-transaction__title">
+                    <span class="expenses-transaction__light">{{ transaction['consumoNeto'] | currency:'USD':true }}</span>
+                </div>
+                <div class="expenses-transaction__subtitle">
+                    {{ transaction['fecha'] }}
+                </div>
+            </div>
+        </button>
+
+        <button *ngIf="!modalMode" class="expenses-transaction__other" (click)="goToExpensesCreate()">
+            <div class="expenses-transaction__left">
+                <div class="expenses-transaction__title">
+                    Continuar sin transacción
+                </div>
+                <div class="expenses-transaction__subtitle">
+                    Podrás asociar tu transacción cuando el comercio la confirme.
+                </div>
+            </div>
+        </button>
+    </section>
+</ion-content>

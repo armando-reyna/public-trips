@@ -1,0 +1,183 @@
+travels-tabs-page {
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes hide {
+        0% {
+            top: 0px;
+        }
+        5% {
+            top: 56px;
+        }
+        95% {
+            top: 56px;
+        }
+        100% {
+            top: 0px;
+        }
+    }
+    
+    @keyframes hide {
+        0% {
+            top: 0px;
+        }
+        5% {
+            top: 56px;
+        }
+        95% {
+            top: 56px;
+        }
+        100% {
+            top: 0px;
+        }
+    }
+    .welcome {
+        background-color: #fcbf6c;
+        padding: 10px;
+        font-family: AvenirNext-Bold;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #fafafa;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        animation: hide 8s;
+        animation-delay: 5px;
+        z-index: 1;
+    }
+    & > ion-tabs {
+        & > ion-header {
+            background-color: white !important;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        }
+        &::before {
+            overflow: visible;
+            content: "";
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 8;
+            box-shadow: 0 -1px 7px 0 rgba(0, 0, 0, 0.14);
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            box-shadow: 0 -1px 7px 0 rgba(0, 0, 0, 0.14);
+        }
+        
+    }
+
+    ion-tabs {
+        .no-connection {
+            filter: blur(6px);
+        }
+        .badge-md {
+            border-radius: 7px;
+            padding: 1px 8px !important;
+            color: #fff;
+            background-color: #de7367;
+        }        
+    }
+
+    .tabs-md {
+        font-family: 'AvenirNext';
+        background: white;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1), 0 0.5px 0 0 rgba(102, 102, 102, 0.05);
+        font-size: 8px;
+        letter-spacing: -0.1px;
+        text-align: center;
+        color: #757575;
+
+        .tabbar {
+            background-color: #ffffff;
+            &:before {
+                content: none !important;
+            }
+        }
+
+        .tab-button-text {
+            font-family: 'AvenirNext';
+            font-size: 8px;
+            letter-spacing: -0.1px;
+            text-align: center;
+            color: #757575;
+        }
+
+        .tab-button {
+            color: rgba(0, 0, 0, 0.54);
+            .tab-button-text {
+
+            }
+        }
+
+        .tab-button[aria-selected=true]  {
+            color: #F59100;
+            .tab-button-icon {
+                color: #F59100;
+            }
+        }
+    }
+
+
+    .tabs__header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+    }
+
+    .tabs__user {
+        padding-left: 20px;
+        padding-top: 12px;
+        font-family: AvenirNext-Medium;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #757575;
+        letter-spacing: -0.2px;
+        label {
+            span {
+                color: #afafaf;
+            }
+        }
+    }
+
+    .tabs__user--icon {
+        margin-right: 5px;
+        color: #757575;
+        font-size: 35px;
+    }
+
+    .tabs__logo {
+        margin: auto;
+        display: table;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    .tabs__logo-image {
+        width: 60px;
+    }
+}

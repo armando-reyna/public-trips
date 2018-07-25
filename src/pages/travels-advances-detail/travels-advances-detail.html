@@ -1,0 +1,76 @@
+<!--
+  Generated template for the TravelsAdvancesDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="advance" padding>
+  <h1>Detalle del anticipo</h1>
+  <p>Consulta los detalles de la solicitud</p>
+  <section class="card">
+    <label class="title">Solicitud de anticipo.</label>
+    <div class="info">
+      <h2 class="name">{{ advance.name }}</h2>
+      <p>{{ advance.description }}</p>
+      <div class="amount">
+        <label class="title">Monto total</label>
+        <h1>{{ advance.amountRequired | currency: 'USD' : true}}</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+            <label class="title">Fecha</label>
+            <span>{{ advance.transferDate | date}}</span>
+        </div>
+        <div *ngIf="approve" class="col">
+          <label class="title">Viajero</label>
+          <span>{{ advance.user.completeName }}</span>
+        </div>
+      </div>
+      <div *ngIf="advance.advanceStatus.id === 1" class="status waiting">
+        Pendiente
+        <ion-icon name="alert"></ion-icon>
+      </div>
+      <div *ngIf="advance.advanceStatus.id === 2" class="status accepted">
+        Aprobado
+        <ion-icon name="checkmark"></ion-icon>
+      </div>
+      <div *ngIf="advance.advanceStatus.id === 3" class="status rejected">
+        Rechazado
+        <ion-icon name="close"></ion-icon>
+      </div>
+      <div *ngIf="advance.advanceStatus.id === 4" class="status accepted">
+        Dispersado
+        <ion-icon name="checkmark"></ion-icon>
+      </div>
+    </div>
+  </section>
+  <label *ngIf="advance.approverUsers && advance.approverUsers.length && !approve" class="title">Aprobadores</label>
+  <section *ngIf="advance.approverUsers && advance.approverUsers.length && !approve" class="approver">
+    <div *ngFor="let approver of advance.approverUsers">
+      <label>{{ approver.user.completeName }}</label>
+      <ion-icon *ngIf="approver.preStatus.id === 1" name="alert"></ion-icon>
+      <ion-icon *ngIf="approver.preStatus.id === 2" name="checkmark"></ion-icon>
+      <ion-icon *ngIf="approver.preStatus.id === 3" name="close"></ion-icon>
+      <ion-icon *ngIf="approver.preStatus.id === 4" name="checkmark"></ion-icon>
+      <p *ngIf="approver.comment">{{ approver.comment }}</p>
+    </div>
+  </section>
+  <label *ngIf="approve" class="title">Comentarios</label>
+  <textarea *ngIf="approve" name="comment" [(ngModel)]="comment" placeholder="Agrega un comentario para tu colaborador"></textarea>
+  <button *ngIf="approve" class="approve" ion-button icon-end (click)="approveAdvance()">
+    Aprobar
+    <ion-icon name="checkmark"></ion-icon>
+  </button>
+  <button *ngIf="approve" class="reject" ion-button icon-end (click)="rejectAdvance()">
+    Rechazar
+    <ion-icon name="close"></ion-icon>
+  </button>
+</ion-content>

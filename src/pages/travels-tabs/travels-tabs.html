@@ -1,0 +1,23 @@
+<ion-tabs selectedIndex="2">
+    <!-- <div class="welcome">Hola, {{ _userData['name'] }}!</div> -->
+    <ion-header>
+        <ion-navbar>
+            <div class="travels__row tabs__header">
+                <div class="tabs__user" (click)="gotoProfile()">
+                    <ion-icon class="tabs__user--icon" name="contact"></ion-icon>
+                    <label>Hola, <span>{{ _userData['name'] }}!</span></label>
+                </div>
+
+                <div class="tabs__logo">
+                    <img class="tabs__logo-image" src="assets/logo-inteliviajes.svg">
+                </div>
+            </div>
+        </ion-navbar>
+    </ion-header>
+    <ion-tab
+        *ngFor="let option of _menuOptions"
+        [root]="option.page"
+        [tabTitle]="option.title"
+        [tabIcon]="option.icon">
+    </ion-tab>
+</ion-tabs>

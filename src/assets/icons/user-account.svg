@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>483A2C4B-4DE4-4F00-A2C3-93D49451EAB2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="App-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Seleccion-destino" transform="translate(-334.000000, -29.000000)" fill="#F59100">
+            <g id="user-account" transform="translate(334.000000, 29.000000)">
+                <ellipse id="Oval" cx="12.5" cy="10.7175" rx="5" ry="5.09916667"></ellipse>
+                <path d="M12.5,0 C5.59638889,0 0,5.59638889 0,12.5 C0,19.4036111 5.59638889,25 12.5,25 C19.4036111,25 25,19.4036111 25,12.5 C25,5.59638889 19.4036111,0 12.5,0 Z M20.1719444,20.1408333 C18.5347222,18.5505556 15.7105556,17.5 12.5,17.5 C9.28944444,17.5 6.46527778,18.5505556 4.82805556,20.1408333 C2.87555556,18.1802778 1.66666667,15.4788889 1.66666667,12.5 C1.66666667,6.52638889 6.52638889,1.66666667 12.5,1.66666667 C18.4736111,1.66666667 23.3333333,6.52638889 23.3333333,12.5 C23.3333333,15.4788889 22.1244444,18.1802778 20.1719444,20.1408333 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

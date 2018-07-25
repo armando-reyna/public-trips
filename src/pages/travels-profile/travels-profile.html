@@ -1,0 +1,106 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="getEvents($event)" pullMin="150">
+        <ion-refresher-content
+        closeDuration="1000"
+        pullingIcon="ion-refresh"
+        refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <section class="page-wrapper profile">
+        <div class="travels__row travels__title">
+            Datos personales
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Nombre de usuario, RFC, correo, contraseña...
+        </div>
+
+        <div class="travels__column travels__card">
+            <div class="travels__row travels__card-title">
+                Información del usuario
+            </div>
+
+            <div class="travels__row profile__user-name">
+                {{ _userData['name'] + ' ' + _userData['firstName'] + ' ' + _userData['lastName'] }}
+            </div>
+
+            <div class="travels__row profile__user-info">
+                <!-- TODO: Uncomment when the service resolve the birthdate and phone number -->
+                <!-- <div class="travels__column profile__user-birthdate">08 Ago 1994</div>
+                <div class="travels__column profile__user-phone">55-19-66-59-48</div> -->
+            </div>
+
+            <div class="travels__row profile__user-mail-title">
+                Correo
+            </div>
+
+            <div class="travels__row profile__user-mail-text">
+                {{ _userData['email'] }}
+            </div>
+
+            <div class="travels__row">
+                <div class="travels__button-orange" (click)="goToChangePassword()">
+                    Cambiar contraseña
+                </div>
+            </div>
+        </div>
+
+        <div class="travels__column travels__card" *ngIf="_rfcData">
+            <div class="travels__row travels__card-title">
+                Consultar RFC
+            </div>
+
+            <div class="travels__row profile__user-mail-title">
+                Registro federal de contribuyentes
+            </div>
+
+            <div class="travels__row profile__user-mail-text">
+                {{ _rfcData['rfc'] }}
+            </div>
+
+            <div class="travels__row profile__user-mail-title">
+                Correo electrónico para facturar
+            </div>
+
+            <div class="travels__row profile__user-mail-text">
+                {{ _emailRfc }}
+            </div>
+
+            <div class="travels__row profile__user-mail-title">
+                Nombre, denominación o razón social
+            </div>
+
+            <div class="travels__row profile__user-mail-text">
+                {{ _rfcData['name'] }}
+            </div>
+
+            <div class="travels__row profile__user-mail-title">
+                Dirección
+            </div>
+
+            <div class="travels__row profile__user-mail-text">
+                {{ _rfcData['fiscalAddress'] }}
+            </div>
+
+            <div class="travels__row">
+                <div class="travels__button-orange" (click)="goToSendEmail()">
+                    Enviar RFC
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="travels__row travels__center profile__margin-bottom">
+            <div class="travels__button-red" (click)="logout()">
+                Cerrar sesión
+            </div>
+        </div>
+
+    </section>
+</ion-content>

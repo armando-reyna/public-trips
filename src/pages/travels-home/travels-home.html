@@ -1,0 +1,78 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="getUserData($event)" pullMin="150">
+        <ion-refresher-content
+        closeDuration="1000"
+        pullingIcon="ion-refresh"
+        refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <section class="page-wrapper home">
+        <div class="travels__row travels__title">
+            Inicio
+        </div>
+        <div class="travels__row travels__subtitle">
+            Consulta tu información y de tarjetas.
+        </div>
+        <div class="travels__row home__cards-message" *ngIf="!_userCards.length">
+            En estos momentos no cuentas con tarjetas asociadas, por favor
+            contacta a tu administrador para asociar una.
+        </div>
+        <!-- Card -->
+        <div class="travels__row" *ngIf="_userCards.length">
+            <ion-slides (ionSlideDidChange)="slideChanged()" direction="horizontal" pager="true" effect="coverflow" loop="false">
+                <ion-slide *ngFor="let card of _userCards">
+                    <div class="home__card-content">
+                        <div class="travels__row home__card-data">
+                            <div class="travels__column travels__width-50">
+                                <div class="travels__column home__card-data">
+                                    <div class="home__card-data--title">Tarjeta</div>
+                                    <div class="home__card-data--text">{{ card['productDescription'] }}</div>
+                                </div>
+                            </div>
+                            <div class="travels__column travels__width-50">
+                                <div class="travels__column home__card-data home__card-data-right">
+                                    <div class="home__card-data--title">Saldo en tarjeta</div>
+                                    <div class="home__card-data--text home__card-data-text-amount" *ngIf="card['balance']">{{ card['balance'] | currency:'USD':true }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="travels__column home__card-data">
+                            <div class="home__card-data--title">Número de tarjeta</div>
+                            <div class="home__card-data--text">**** **** **** {{ card['maskCardNumber'] }}</div>
+                        </div>
+                        <div class="travels__row home__card-buttons">
+                            <div class="travels__column travels__with-50">
+                                <button class="home__button_white" (click)="goToListMovements(card)">Últimos movimientos</button>
+                            </div>
+                            <div class="travels__column travels__with-50 home__card-data-right-bottom">
+                                <img class="home__sivale-logo-image" src="assets/sivale-white.svg">
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <!-- Home Buttons -->
+        <div class="travels__row travels__space-around">
+            <button class="home__button home__button-expenses" (click)="goToCreateExpenses()">
+                <ion-icon class="home__button-icon" name="card"></ion-icon>
+                <div class="home-button-text">Crear un gasto</div>
+            </button>
+            <button class="home__button home__button-events" (click)="goToCreateEvent()">
+                <!-- <ion-icon class="home__button-icon" name="paper"></ion-icon> -->
+                <ion-icon class="home__button-icon" md-name="assignment"></ion-icon>
+                <div class="home-button-text">Crear un informe de gastos</div>
+            </button>
+        </div>
+        <div class="travels__row {{ (_approvalsList || pendingAdvances) && _currentCard ? 'travels__space-around' : null }}">
+            <button *ngIf="_currentCard" class="home__button home__button-advances {{ (_approvalsList || pendingAdvances) ? null : 'fullWidth' }}" (click)="goToAdvances()">
+                <ion-icon class="home__button-icon" name="logo-usd"></ion-icon>
+                <div class="home-button-text">Anticipos</div>
+            </button>
+            <button *ngIf="_approvalsList || pendingAdvances" class="home__button home__button-approval {{ _currentCard ? null : 'fullWidth' }}" (click)="goToApprovals()">
+                <ion-icon class="home__button-icon" md-name="assignment_turned_in"></ion-icon>
+                <div class="home-button-text">Aprobaciones</div>
+            </button>
+        </div>
+    </section>
+</ion-content>

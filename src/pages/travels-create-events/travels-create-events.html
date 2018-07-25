@@ -1,0 +1,168 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons end class="end-ion-button">
+          <button
+              ion-button
+              id="btnSaveEvent"
+              (click)="saveEvent()">
+                  Guardar
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="">
+    <section class="page-wrapper create-events">
+
+        <form
+            id="createLogin"
+            [formGroup]="_formCreateGroup"
+            (ngSubmit)="saveEvent()"
+            novalidate
+            class="travels__form">
+
+            <div class="travels__row travels__form-label">Nombre informe</div>
+            <div class="travels__row">
+                <input
+                    type="text"
+                    placeholder="Nombre del informe"
+                    id="nameEvent"
+                    name="nameEvent"
+                    [(ngModel)]="event['name']"
+                    formControlName="nameEvent"
+                    class="travels__form-input">
+            </div>
+
+            <div class="travels__row">
+                <div class="travels__column travels__with-50 dateButton" (click)="openDatePicker('start')">
+                    <div class="travels__row travels__form-label">
+                        Fecha inicio
+                    </div>
+                    <div class="travels__row">
+                        <ion-item class="travels__form-datepicker">
+                            <ion-datetime
+                                [(ngModel)]="event['dateStart']"
+                                displayFormat="DD MMMM YYYY"
+                                pickerFormat="DD MMMM YYYY"
+                                placeholder="Fecha inicio"
+                                min="{{ _minYear }}"
+                                max="{{ event['dateEnd'] ? event['dateEnd'] : _maxYear }}"
+                                doneText="Ok"
+                                cancelText="Cancelar"
+                                formControlName="startDate">
+                            </ion-datetime>
+                        </ion-item>
+                    </div>
+                </div>
+
+                <div class="travels__column travels__with-50 dateButton" (click)="openDatePicker('end')">
+                    <div class="travels__row travels__form-label">
+                        Fecha término
+                    </div>
+                    <div class="travels__row">
+                        <ion-item class="travels__form-datepicker">
+                            <ion-datetime
+                                [(ngModel)]="event['dateEnd']"
+                                displayFormat="DD MMMM YYYY"
+                                pickerFormat="DD MMMM YYYY"
+                                placeholder="Fecha término"
+                                min="{{ event['dateStart'] ? event['dateStart'] : _minYear }}"
+                                max="{{ _maxYear }}"
+                                cancelText="Cancelar"
+                                doneText="Ok"
+                                formControlName="endDate">
+                            </ion-datetime>
+                        </ion-item>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travels__column">
+                <div class="travels__row travels__form-label create-events-margin-top-15">
+                    Gastos asociados
+                </div>
+
+
+                <div class="travels__row travels__list" *ngIf="_currentExpenses.length">
+                    <ion-list class="travels__full-width">
+                        <ion-item-sliding *ngFor="let expense of _currentExpenses; let i = index">
+                
+                            <ion-item class="travels__item-md" (click)="selectExpense(expense)">
+                
+                                <div class="travels__row travels__item">
+                                    <div class="travels__row travels__item-container select-expenses__item-container">
+                
+                                        <!-- Left side -->
+                                        <div class="travels__column select-expenses__left-size">
+                                            <div class="travels__row travels__item-title">{{ expense.name }}</div>
+                                            <div class="travels__row travels__item-subtitle">
+                                                <span class="travels__item-subtitle--light" *ngIf="expense.transaction">
+                                                    <ion-icon name="md-link"></ion-icon>
+                                                    Transacción asociada
+                                                </span>
+                
+                                                <span class="travels__item-subtitle--light" *ngIf="!expense.transaction">
+                                                    Transacción no asociada
+                                                </span>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Right side -->
+                                        <div class="travels__column select-expenses__amount-side">
+                                            <div class="travels__row select-expenses__amount-title">{{ expense['spendingTotal'] | currency:'USD':true }}</div>
+                                            <div class="travels__row select-expenses__amount-text"> {{ getFormatDate(expense['dateStart']) }}</div>
+                                            <!-- <div class="travels__row select-expenses__amount-title">Monto comprobado</div>
+                                                            <div class="travels__row select-expenses__amount-text">$0</div> -->
+                                        </div>
+                                    </div>
+                
+                                </div>
+                
+                                <div class="travels__row select-expenses__status select-expenses__status--aproved" *ngIf="!expense.event">
+                                    <div class="travels__column select-expenses__status-text">No asociado a un informe de gastos</div>
+                                </div>
+                
+                                <div class="travels__row select-expenses__status select-expenses__status--review" *ngIf="expense.event">
+                                    <div class="travels__column select-expenses__status-text">{{ expense.event.name }}</div>
+                                </div>
+                            </ion-item>
+                            <ion-item-options side="right" *ngIf="expense.event && (expense.event['approvalStatus']['id'] === 1 || expense.event['approvalStatus']['id'] === 4)">
+                                <button ion-button class="travels__list-button-delete" (click)="deleteExpense(i)">Eliminar</button>
+                            </ion-item-options>
+                        </ion-item-sliding>
+                    </ion-list>
+                </div>
+
+
+
+                <div class="travels__row travels__button-orange create-events__full-width" (click)="goExpenses()">
+                    Añadir gastos
+                </div>
+            </div>
+
+            <div class="travels__column create-events-margin-top-15">
+                <div class="travels__column travels__form-label">Comentarios</div>
+                <ion-item>
+                    <ion-textarea
+                    [(ngModel)]="event['description']"
+                    placeholder="Comentarios"
+                    id="comment"
+                    name="comment"
+                    formControlName="comment"
+                    class="travels__form-textArea"
+                        rows="6">
+                    </ion-textarea>
+                </ion-item>
+
+            </div>
+
+            <!-- <div class="travels__column">
+                <div class="travels__row travels__button-blue create-events__full-width">
+                    Enviar a aprobación
+                </div>
+            </div> -->
+
+        </form>
+
+    </section>
+</ion-content>

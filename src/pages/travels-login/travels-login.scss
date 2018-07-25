@@ -1,0 +1,122 @@
+
+travels-login-page {
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * Styles to modify the header
+     */
+    ion-header {
+        box-shadow: none!important;
+    }
+
+    ion-content {
+        background-color: #FFFFFF!important;
+    }
+    ion-header {
+      .toolbar-background {
+        background: white;
+        border: none;
+      }
+      &:after {
+        content: none !important;
+      }
+    }
+
+    .button-inner {
+        color: #f59100;
+        text-transform: none;
+        font-family: 'AvenirNext';
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+
+    .travels--full-height {
+        // height: 100%;
+    }
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * inteliviajes logo
+     */
+    .login__logo {
+        height: 90px;
+        margin-bottom: 50px;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * form login
+     */
+    input {
+        width: 100%;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        color: #757575;
+        border: none;
+        border-bottom: 1px solid #dcdcdc;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        // padding-left: 15px;
+        // padding-right: 15px;
+    }
+
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #f8a163;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.31;
+    }
+
+    .login__button {
+        width: 222px;
+        height: 45.5px;
+        border-radius: 18px;
+        background-image: linear-gradient(to left, #fcbf6c, #f0977a);
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+        font-family: 'AvenirNext';
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 30px;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     *  login forgot
+     */
+    .login__forgot {
+        flex-grow: 1;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+        color: #f8a163;
+        align-items: flex-start;
+    }
+
+    .login__forgot-text {
+        align-self: flex-start;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * advertisement
+     */
+
+    .login__advertisement {
+        font-family: 'AvenirNext';
+        font-size: 8px;
+        font-weight: 300;
+        text-align: center;
+        color: #4e4e4e;
+        align-self: flex-end;
+        // height: 130px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

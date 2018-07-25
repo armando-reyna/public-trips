@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button (click)="closeSelectExpenses([])">
+                <ion-icon name="arrow-back"></ion-icon> Atrás
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <section class="page-wrapper select-expenses">
+        <div class="travels__row travels__title">
+            Añade gastos a tu informe
+        </div>
+        <div class="travels__row travels__subtitle">
+            Selecciona cuáles deseas agregar.
+        </div>
+        <div class="travels__row travels__list">
+            <ion-list class="travels__full-width">
+                <ion-item-sliding *ngFor="let expense of _currentExpenses">
+                    <ion-item class="travels__item-md" (click)="selectExpense(expense)">
+                        <div class="travels__row travels__item">
+                            <div class="travels__row travels__item-container select-expenses__item-container">
+                                <!-- Left side -->
+                                <div class="travels__column select-expenses__left-size">
+                                    <div class="travels__row travels__item-title">{{ expense.name }}</div>
+                                    <div class="travels__row travels__item-subtitle">
+                                        <span class="travels__item-subtitle--light" *ngIf="expense.transaction">
+                                            <ion-icon name="md-link"></ion-icon>
+                                            Transacción asociada
+                                        </span>
+                                        <span class="travels__item-subtitle--light" *ngIf="!expense.transaction">
+                                            Transacción no asociada
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Right side -->
+                                <div class="travels__column select-expenses__amount-side">
+                                    <div class="travels__row select-expenses__amount-title">{{ expense['spendingTotal'] | currency:'USD':true }}</div>
+                                    <div class="travels__row select-expenses__amount-text"> {{ getFormatDate(expense['dateStart']) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="travels__row select-expenses__status select-expenses__status--aproved" *ngIf="!expense.event">
+                            <div class="travels__column select-expenses__status-text">No asociado a un informe de gastos</div>
+                        </div>
+                        <div class="travels__row select-expenses__status select-expenses__status--review" *ngIf="expense.event">
+                            <div class="travels__column select-expenses__status-text">{{ expense.event.name }}</div>
+                        </div>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+    </section>
+</ion-content>

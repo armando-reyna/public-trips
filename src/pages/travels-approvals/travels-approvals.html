@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+<ion-tabs>
+    <ion-tab
+        *ngFor="let option of _menuOptions"
+        [root]="option.page"
+        [tabBadge]="option.badge"
+        [tabTitle]="option.title"
+        [tabIcon]="option.icon">
+    </ion-tab>
+</ion-tabs>

@@ -1,0 +1,156 @@
+travels-invoices-select-page {
+
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .fixed-content {
+        margin-top: 20px!important;
+    }
+
+    .select-expenses {}
+
+    .select-expenses__cancel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        font-family: 'AvenirNext';
+        font-size: 17px;
+        line-height: 1.29;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #f59100;
+        margin-left: 20px;
+    }
+
+    .select-expenses__logo {
+        margin-left: 40%;
+    }
+
+    .label-md {
+        margin-bottom: 0px!important;
+        margin-top: 5px;
+    }
+
+    .select-expenses {}
+
+    .select-expenses__left-size {
+        // width: 270px;
+        width: 70%;
+    }
+
+    .select-expenses__amount-side {
+        // width: 100px;
+    }
+
+    .select-expenses__item-container {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .select-expenses__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .select-expenses__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+    .select-expenses__status {
+        padding-bottom: 7px;
+    }
+
+    .select-expenses__status--aproved {
+        background-color: rgba(245, 240, 240, 0.6);
+        // background-color: rgba(126, 182, 159, 0.11);
+        // color: #7eb69f;
+        padding-top: 4px;
+        color: #757575;
+    }
+
+    .select-expenses__status--review {
+        background-color: rgba(245, 240, 240, 0.6);
+        padding-top: 4px;
+        color: #757575;
+        // background-color: rgba(252, 191, 108, 0.11);
+        // color: #fcbf6c;
+    }
+
+    .select-expenses__status--verify {
+        background-color: rgba(240, 111, 103, 0.11);
+        color: #f06f67;
+    }
+
+    .select-expenses__status-text {
+        font-family: 'KabelITCbyBT-Demi';
+        font-size: 11px;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 2px;
+    }
+
+    .invoices__left-size {
+        width: 70%;
+        
+    }
+
+    .invoices__amount-side {
+        width: 100px;
+    }
+
+    .invoices__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 10px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .invoices__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+}

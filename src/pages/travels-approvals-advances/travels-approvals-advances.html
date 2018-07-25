@@ -1,0 +1,36 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="ionViewWillEnter($event)" pullMin="150">
+      <ion-refresher-content
+      closeDuration="1000"
+      pullingIcon="ion-refresh"
+      refreshingSpinner="circles">
+      </ion-refresher-content>
+  </ion-refresher>
+  <div class="travels__row travels__title">
+      Anticipos
+  </div>
+  <div class="travels__row travels__subtitle">
+      Aprueba los anticipos de tus colaboradores.
+  </div>
+  <section class="list">
+    <label *ngIf="pending[0]" class="title">Anticipos pendientes.</label>
+    <div *ngFor="let advance of pending"
+      (click)="goToPendingAdvanceDetail(advance.id)"
+      class="item"
+        [ngClass]="{
+          waiting: advance.advanceStatus.id === 1,
+          accepted: advance.advanceStatus.id === 2,
+          rejected: advance.advanceStatus.id === 3,
+          accepted: advance.advanceStatus.id === 4
+      }"
+      >
+      <label class="title">{{ advance.name }}</label>
+      <label class="title">{{ advance.user.completeName }}</label>
+      <label class="date">{{ advance.transferDate | date }}</label>
+      <div class="amount">
+        <label>{{ advance.amountRequired | currency:'USD':true }}</label>
+        <ion-icon class="home__button-icon" name="logo-usd"></ion-icon>
+      </div>
+    </div>
+  </section>
+</ion-content>

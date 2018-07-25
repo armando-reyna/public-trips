@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper movements">
+
+        <div class="travels__row travels__title">
+            Últimos movimientos
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta tus últimos ingresos, egresos y más.
+        </div>
+
+        <div class="travels__row travels__list">
+            <div class="travels__column travels__width-50">
+                <div class="travels__column movements__card-data">
+                    <div class="movements__card-data--title">Tarjeta</div>
+                    <div class="movements__card-data--text">{{ _cardData['productDescription'] }}</div>
+                </div>
+            </div>
+            <div class="travels__column travels__width-50">
+                <div class="travels__column movements__card-data movements__card-data-right">
+                    <div class="movements__card-data--title movements__card-data-right">Saldo en tarjeta</div>
+                    <div class="movements__card-data--text movements__card-data-text-amount">{{ _cardData['balance'] | currency:'USD':true }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="travels__column">
+            <div class="movements__card-data--title">Número de tarjeta</div>
+            <div class="movements__card-data--text">**** **** **** {{ _cardData['maskCardNumber'] }}</div>
+        </div>
+        <div class="travels__column travels__card empty" *ngIf="movements && !movements.length">
+            <div class="travels__row travels__card-title">Sin resultados</div>
+        </div>
+        <div class="travels__column travels__card" *ngFor="let m of (movements ? objectKeys(movements) : [])">
+            <div class="travels__row travels__card-title">
+                {{ m }}
+            </div>
+
+            <div class="travels__row movements__item" *ngFor="let movement of movements[m]">
+                <!-- Left side -->
+                <div class="travels__column events__left-size">
+                    <div class="travels__row travels__item-title movements__item-title">{{ movement['acceptorName'] }}</div>
+                    <div class="travels__row travels__item-subtitle movements__item-subtitle">
+                        <span class="travels__item-subtitle--light">{{ movement.formatedDate }}</span>
+                        <span class="travels__item-subtitle--light">{{ movement.formatedTime }}</span>
+                    </div>
+                </div>
+                <!-- Right side -->
+                <div class="travels__column moments__amount-side">
+                    <div class="travels__row events__amount-title movements__item-amount">{{ movement['amount'] | currency:'USD':true }}</div>
+                    <div class="travels__row events__amount-text movements__item-city">{{ movement['authorizationNumber'] }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ion-content>

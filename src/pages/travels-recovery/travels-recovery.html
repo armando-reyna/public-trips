@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper travels">
+
+        <!-- Intelivijaes logo -->
+        <div class="travels__row travels__center">
+            <img class="recovery__logo" src="assets/logo-inteliviajes.svg">
+        </div>
+
+        <!-- Recovery form content -->
+        <div class="recovery__form" *ngIf="_recoveryStatus === 'form'">
+            <!-- Recovery password instructions -->
+            <div class="travels__row recovery__title">Recuperar contraseña</div>
+
+            <!-- Intructions -->
+            <div class="travels__row recovery__instructions">
+                Ingresa tu correo para recibir una nueva contraseña
+            </div>
+
+            <!-- Form login -->
+            <div class="travels__row travels__center">
+                <form
+                    id="formRecovery"
+                    [formGroup]="_formRecoveryGroup"
+                    (ngSubmit)="recoveryPassword()"
+                    novalidate>
+
+                    <input
+                        type="text"
+                        placeholder="Tu correo electrónico"
+                        id="username"
+                        name="username"
+                        formControlName="username">
+
+                    <div class="travels__row travels__center">
+                        <button
+                            type="button"
+                            name="buttonRecovery"
+                            (click)="recoveryPassword()"
+                            class="recovery__button"
+                            [disabled]="!_formRecoveryGroup.valid || _loading">
+                            {{ _recoveryButtonText }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Recovery success message -->
+        <div class="recovery__success" *ngIf="_recoveryStatus === 'success'">
+            <!-- Recovery password instructions -->
+            <div class="travels__row recovery__title">¡Muy bien!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row recovery__instructions">
+                Hemos enviado un link a tu correo para que puedas cambiar tu
+                contraseña.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goLogin()"
+                    class="recovery__button">
+                    Regresar
+                </button>
+            </div>
+        </div>
+
+
+    </section>
+</ion-content>

@@ -1,0 +1,127 @@
+travels-create-events-page {
+
+    ion-content {
+        background-color: #FFFFFF!important;
+        background-image: none!important;
+        // background-image: url("../assets/inteliviajes-background.jpg");
+        // background-repeat: no-repeat;
+        // background-size: cover;
+    }
+
+    ion-header {
+        .toolbar-background {
+          background: white;
+          border: none;
+        }
+        &:after {
+          content: none !important;
+        }
+    }
+    .create-events {}
+
+    .create-events__full-width {
+        width: 100%;
+    }
+
+    .create-events__padding-top-0 {
+        padding-top: 0;
+    }
+
+    .create-events-margin-top-15 {
+        margin-top: 15px;
+    }
+
+    ion-item {
+        padding-left: 0px!important;
+    }
+    
+    // - List expenses
+    .label-md {
+        margin-bottom: 0px!important;
+        margin-top: 5px;
+    }
+
+    .select-expenses__left-size {
+        // width: 270px;
+        width: 70%;
+    }
+
+    .select-expenses__amount-side {
+        // width: 100px;
+    }
+
+    .select-expenses__item-container {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .select-expenses__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .select-expenses__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+    .select-expenses__status {
+        padding-bottom: 7px;
+    }
+
+    .select-expenses__status--aproved {
+        background-color: rgba(245, 240, 240, 0.6);
+        // background-color: rgba(126, 182, 159, 0.11);
+        // color: #7eb69f;
+        padding-top: 4px;
+        color: #757575;
+    }
+
+    .select-expenses__status--review {
+        background-color: rgba(245, 240, 240, 0.6);
+        padding-top: 4px;
+        color: #757575;
+        // background-color: rgba(252, 191, 108, 0.11);
+        // color: #fcbf6c;
+    }
+
+    .select-expenses__status--verify {
+        background-color: rgba(240, 111, 103, 0.11);
+        color: #f06f67;
+    }
+
+    .select-expenses__status-text {
+        font-family: 'KabelITCbyBT-Demi';
+        font-size: 11px;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 2px;
+    }
+    .dateButton {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

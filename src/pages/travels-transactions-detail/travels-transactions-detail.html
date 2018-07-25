@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper transactions-detail">
+
+        <div class="travels__row travels__title">
+            Detalle de transacción
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta los datos de la transacción.
+        </div>
+
+        <div class="travels__column travels__card">
+            <div class="travels__row travels__card-title">
+                Información de la transacción
+            </div>
+
+            <div class="travels__row transactions-detail__name-event">
+                {{ _currentTransaction['nombreComercio'] }}
+            </div>
+
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="transactions-detail__title">Nº Tarjeta</div>
+                    <div class="transactions-detail__text">{{ getLastCardNumbers(_currentTransaction['numTarjeta']) }}</div>
+                </div>
+
+                <div class="travels__column travels__with-50">
+                    <div class="transactions-detail__title">Nº Aut</div>
+                    <div class="transactions-detail__text">{{ _currentTransaction['numAutorizacion'] }}</div>
+                </div>
+            </div>
+
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="transactions-detail__title">Fecha</div>
+                    <div class="transactions-detail__text">{{ _currentTransaction['fecha'] }}</div>
+                </div>
+
+                <div class="travels__column travels__with-50">
+                    <div class="transactions-detail__title">Hora</div>
+                    <div class="transactions-detail__text">{{ _currentTransaction['hora'] }}</div>
+                </div>
+            </div>
+
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="transactions-detail__title">Monto total</div>
+                    <div class="transactions-detail__text--amount">{{ _currentTransaction['consumoNeto'] | currency:'USD':true }}</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</ion-content>

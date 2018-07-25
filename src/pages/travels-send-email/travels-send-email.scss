@@ -1,0 +1,135 @@
+
+
+travels-send-email-page {
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * Styles to modify the header
+     */
+    ion-header {
+        box-shadow: none!important;
+    }
+
+    ion-content {
+        background-color: #FFFFFF!important;
+    }
+
+    ion-header {
+        .toolbar-background {
+          background: white;
+          border: none;
+        }
+        &:after {
+          content: none !important;
+        }
+      }
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * Recovery generals
+     */
+
+    .send-email__title {
+        font-family: 'AvenirNext';
+        font-size: 24px;
+        line-height: 1.0;
+        text-align: left;
+        color: #4e4e4e;
+        margin-bottom: 10px;
+    }
+
+    .send-email__instructions {
+        font-family: 'AvenirNext';
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.11;
+        text-align: left;
+        color: #4e4e4e;
+        // margin-bottom: 50px;
+        margin-bottom: 10px;
+    }
+
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * inteliviajes logo
+     */
+    .send-email__logo {
+        height: 90px;
+        margin-bottom: 50px;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * Recovery form content
+     */
+
+    .send-email__form {
+        width: 100%;
+        // margin-top: 50px;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * form login
+     */
+    form {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        color: #757575;
+        border: none;
+        border-bottom: 1px solid #dcdcdc;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        border-radius: 0px;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #f8a163;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.31;
+    }
+
+    .send-email__input-black::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #757575;
+        font-family: 'AvenirNext';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.31;
+    }
+
+    .send-email__margin-top-item {
+        margin-top: 20px;
+    }
+
+    .send-email__button {
+        width: 222px;
+        height: 45.5px;
+        border-radius: 18px;
+        background-image: linear-gradient(to left, #fcbf6c, #f0977a);
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+        font-family: 'AvenirNext';
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 30px;
+    }
+
+    /**
+     * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * Recovery success message
+     */
+
+    .send-email__success {
+        width: 100%;
+    }
+}

@@ -1,0 +1,68 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="getInvoices($event)" pullMin="150">
+        <ion-refresher-content
+        closeDuration="1000"
+        pullingIcon="ion-refresh"
+        refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <section class="page-wrapper invoices">
+
+        <div class="travels__row travels__title">
+            Facturas
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta tus facturas y su estado de validación.
+        </div>
+
+        <div class="travels__row travels__list">
+            <ion-list class="travels__full-width">
+                <ion-item-sliding *ngFor="let invoice of _currentInvoices" #slidingItem>
+
+                    <ion-item class="travels__item-md" (click)="goToDetailEvent(invoice)">
+
+                        <div class="travels__row travels__item">
+                            <div class="travels__row travels__item-container invoices__container">
+                                <!-- Left side -->
+                                <div class="travels__column invoices__left-size">
+                                    <div class="travels__row travels__item-title">{{ invoice['establishment'] }}</div>
+                                    <div class="travels__row travels__item-subtitle">{{ invoice['rfcReceiver'] }}</div>
+                                </div>
+
+                                <!-- Right side -->
+                                <div class="travels__column invoices__amount-side">
+                                    <!-- <div class="travels__row invoices__amount-title">Monto total</div> -->
+                                    <div class="travels__row invoices__amount-text">{{ invoice['total'] | currency:'USD':true }}</div>
+                                    <!-- <div class="travels__row invoices__amount-title">Monto comprobado</div> -->
+                                    <div class="travels__row invoices__amount-text">{{ invoice['dateInvoice'] }}</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="travels__row events__status events__status--aproved" *ngIf="event.approvalStatusId === 3">
+                            <div class="travels__column events__status-text">Aprobado</div>
+                        </div>
+
+                        <div class="travels__row events__status events__status--review" *ngIf="event.approvalStatusId === 2">
+                            <div class="travels__column events__status-text">En revisión</div>
+                        </div>
+
+                        <div class="travels__row events__status events__status--verify" *ngIf="event.approvalStatusId === 4">
+                            <div class="travels__column events__status-text">Verificar</div>
+                        </div> -->
+
+                    </ion-item>
+
+                    <!-- <ion-item-options side="right">
+                        <button ion-button class="travels__list-button-delete" (click)="deleteInvoice(invoice, slidingItem)">Eliminar</button>
+                    </ion-item-options> -->
+
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+
+    </section>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content>
+    <section class="page-wrapper transactions">
+
+        <div class="travels__row travels__title">
+            Transacciones
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta tus transacciones firmes, y sus asociaciones.
+        </div>
+
+        <div class="transactions__content">
+            <button class="transactions__item" *ngFor="let transaction of _transactions" (click)="goToTransactionsDetail(transaction)">
+                <div class="transactions__left">
+                    <div class="transactions__title">
+                        Nº Autorización:
+                        <span class="transactions__light"> {{ transaction['numAutorizacion'] }}</span>
+                    </div>
+                    <div class="transactions__subtitle">
+                        {{ transaction['nombreComercio']}}
+                    </div>
+                </div>
+                <div class="transactions__right">
+                    <div class="transactions__title">
+                        <span class="transactions__light">{{ transaction['consumoNeto'] | currency:'USD':true }}</span>
+                    </div>
+                    <div class="transactions__subtitle">
+                        {{ transaction['fecha'] }}
+                        <!-- {{ getDateFormat(transaction['fecha']) }} -->
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </section>
+</ion-content>

@@ -1,0 +1,173 @@
+travels-home-page {
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .swiper-pagination-bullets {
+        bottom: 0px!important;
+    }
+    .swiper-pagination-bullet-active {
+        background: #f8a163;
+    }
+
+    .home {}
+
+    .home__cards-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        // height: 300px;
+
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 500;
+        text-align: left;
+        color: #757575;
+    }
+
+    .home__card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        // height: 50%;
+        // height: 250px;
+        border-radius: 10px;
+        background-image: linear-gradient(123deg, #d3d3d3, #6a6a6a);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .home__card-data {
+        font-family: 'AvenirNext';
+        font-weight: 500;
+        letter-spacing: 0.1px;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .home__card-data-right {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .home__card-data-right-bottom {
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: flex-end;
+    }
+
+    .home__card-data--title {
+        font-size: 12px;
+    }
+
+    .home__card-data--text {
+        font-size: 15px;
+    }
+
+    .home__card-data-text-amount {
+        font-size: 20px;
+        text-align: right;
+    }
+
+    .home__card-buttons {
+        margin-top: 60px;
+    }
+
+    .home__button_white {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        height: 40px;
+        border-radius: 6px;
+        background-color: #ffffff;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: -0.1px;
+        color: #757575;
+    }
+
+    .home__sivale-logo-image {
+        width: 57px;
+    }
+
+    .home__button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        // width: 150px;
+        // height: 150px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+        width: calc(50% - 15px);
+        align-content: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        margin-top: 15px;
+        &.fullWidth {
+            flex-direction: row;
+            width: calc(100% - 15px);
+            margin-left: 7.5px;
+            ion-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .home__button-expenses {
+        // font-size: 50px;
+        color:#ed9875;
+    }
+
+    .home__button-events {
+        // font-size: 50px;
+        color:#7fccd8;
+    }
+    .home__button-advances {
+        // font-size: 50px;
+        color:#fcbf6c;
+    }
+
+    .home__button-icon {
+        font-size: 15vw;
+    }
+
+    .home-button-text {
+        font-family: 'AvenirNext';
+        font-size: 13px;
+        line-height: 1.38;
+        letter-spacing: -0.1px;
+        text-align: center;
+        color: #757575;
+    }
+
+    .home__button-approval {
+        color: #94cb8e;
+    }
+
+}

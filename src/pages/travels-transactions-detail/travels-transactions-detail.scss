@@ -1,0 +1,48 @@
+travels-transactions-detail-page {
+
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .transactions-detail {}
+
+    .transactions-detail__name-event {
+        font-family: 'AvenirNext';
+        font-size: 24px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .transactions-detail__title {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .transactions-detail__text {
+        font-family: 'AvenirNext';
+        font-size: 18px;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #afafaf;
+    }
+
+    .transactions-detail__text--amount {
+        font-family: 'AvenirNext';
+        font-size: 23px;
+        line-height: 0.91;
+        letter-spacing: -0.5px;
+        text-align: left;
+        color: #f5a257;
+    }
+}

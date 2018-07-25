@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>C6AD05D1-7660-483B-8F5D-86DBB79BDA70</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="App-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cuenta" transform="translate(-19.000000, -520.000000)">
+            <g id="Table-Cells-with-Icons-Copy" transform="translate(0.000000, 377.000000)">
+                <g id="Table-Cell-Copy" transform="translate(0.000000, 132.000000)">
+                    <g id="date" transform="translate(15.000000, 7.000000)">
+                        <rect id="Bounds" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="25" height="25"></rect>
+                        <path d="M11.2424957,11.1363875 L11.2424957,15.3863875 L6.99249572,15.3863875 L6.99249572,11.1363875 L11.2424957,11.1363875 Z M16.0416667,4 L18.1666667,4 L18.1666667,5.41666667 L19.2291667,5.41666667 C19.7013912,5.41666667 20.1145816,5.59374823 20.46875,5.94791667 C20.8229184,6.3020851 21,6.71527542 21,7.1875 L21,19.2291667 C21,19.7013913 20.8229184,20.1145816 20.46875,20.46875 C20.1145816,20.8229184 19.7013912,21 19.2291667,21 L5.77083333,21 C5.29860875,21 4.88541844,20.8229184 4.53125,20.46875 C4.17708156,20.1145816 4,19.7013913 4,19.2291667 L4,7.1875 C4,6.71527542 4.17708156,6.3020851 4.53125,5.94791667 C4.88541844,5.59374823 5.29860875,5.41666667 5.77083333,5.41666667 L6.83333333,5.41666667 L6.83333333,4 L8.95833333,4 L8.95833333,5.41666667 L16.0416667,5.41666667 L16.0416667,4 Z M19.2291667,19.2291667 L19.2291667,9.84375 L5.77083333,9.84375 L5.77083333,19.2291667 L19.2291667,19.2291667 Z" id="from-date-report" fill="#2D6CA9"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

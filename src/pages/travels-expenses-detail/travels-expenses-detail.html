@@ -1,0 +1,112 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons *ngIf="_currentExpense['id'] && _currentExpense['approvalStatus']['id'] !== 3 && _currentExpense['approvalStatus']['id'] !== 2" end>
+            <button (click)="editExpense()" ion-button>
+                Editar
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper expenses-detail">
+
+        <div class="travels__row travels__title">
+            Detalle del gasto
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta los detalles de tu gasto y edita.
+        </div>
+
+        <div class="travels__column travels__card">
+            <div class="travels__row travels__card-title">
+                Gasto
+                <label class="gray" *ngIf="_currentExpense['approvalStatus']['id'] === 1">No enviado</label>
+                <label class="yellow" *ngIf="_currentExpense['approvalStatus']['id'] === 2">En revisión</label>
+                <label class="green" *ngIf="_currentExpense['approvalStatus']['id'] === 3">Aprobado</label>
+                <label class="red" *ngIf="_currentExpense['approvalStatus']['id'] === 4">Verificar</label>
+            </div>
+
+            <div class="travels__row expenses-detail__name-event">{{ _currentExpense['name'] }}</div>
+
+            <div class="travels__row expenses-detail__title travels__top-space">Método de pago</div>
+            <div class="travels__row expenses-detail__text" *ngIf="_currentExpense['payMethod']">{{ _currentExpense['payMethod']['name'] }}</div>
+
+            <div class="travels__row expenses-detail__title travels__top-space">Monto total</div>
+            <div class="travels__row expenses-detail__text" *ngIf="_currentExpense['spendingTotal']">{{ _currentExpense['spendingTotal']  | currency:'USD':true }}</div>
+
+            <div class="travels__row expenses-detail__title travels__top-space">Informe de gastos</div>
+            <!-- <div class="travels__row expenses-detail__text" *ngIf="_currentExpense['eventId']">{{ _currentExpense['eventName'] }}</div> -->
+            <div class="travels__row expenses-detail__text" *ngIf="_currentExpense['event']">{{ _currentExpense['event']['name'] }}</div>
+            <div class="travels__row expenses-detail__text" *ngIf="!_currentExpense['event']">No asociado a un informe de gastos</div>
+        </div>
+
+        <!-- <div class="travels__card-title-outside">
+            Transacción
+        </div> -->
+
+        <!-- <div class="travels__row travels__button-orange create-events__full-width" *ngIf="!_currentExpense['transaction']">
+            Añadir transacción
+        </div> -->
+
+        <!-- <div class="travels__row travels__form-label" *ngIf="_currentExpense['transaction']['numAutorizacion']">Transacción</div> -->
+
+
+        <div class="travels__card-title-outside" *ngIf="_currentExpense['transaction']">
+            Transacción
+        </div>
+
+        <div class="travels__row" *ngIf="_currentExpense['transaction']">
+            <button class="expenses-detail__transaction-item">
+                <div class="expenses-detail__transaction-left">
+                    <div class="expenses-detail__transaction-title">
+                        Nº Autorización:
+                        <span class="expenses-detail__transaction-light"> {{ _currentExpense['transaction']['numAutorizacion'] }}</span>
+                    </div>
+                    <div class="expenses-detail__transaction-subtitle">
+                        {{ _currentExpense['transaction']['nombreComercio']}}
+                    </div>
+                </div>
+                <div class="expenses-detail__transaction-right">
+                    <div class="expenses-detail__transaction-title">
+                        <span class="expenses-detail__transaction-light">{{ _currentExpense['transaction']['consumoNeto'] | currency:'USD':true }}</span>
+                    </div>
+                    <div class="expenses-detail__transaction-subtitle">
+                        {{ _currentExpense['transaction']['fecha'] }}
+                    </div>
+                </div>
+            </button>
+        </div>
+
+
+        <div *ngIf="invoice || _evidencePhoto" class="travels__card-title-outside">
+            Comprobantes
+        </div>
+
+        <ion-item class="travels__item-md" *ngIf="invoice" (click)="goToDetailEvent(invoice)">
+
+            <div class="travels__row travels__item">
+                <div class="travels__row travels__item-container invoices__container">
+                    <!-- Left side -->
+                    <div class="travels__column invoices__left-size">
+                        <div class="travels__row travels__item-title">{{ invoice['establishment'] }}</div>
+                        <div class="travels__row travels__item-subtitle">{{ invoice['rfcReceiver'] }}</div>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="travels__column invoices__amount-side">
+                        <div class="travels__row invoices__amount-text">{{ invoice['total'] | currency:'USD':true }}</div>
+
+                        <div class="travels__row invoices__amount-text">{{ invoice['dateInvoice'] }}</div>
+                    </div>
+                </div>
+            </div>
+        </ion-item>
+
+        <div class="travels__row expenses-detail__image-content" *ngIf="_evidencePhoto">
+            <img [src]="sanitizer.bypassSecurityTrustResourceUrl(_evidencePhoto)" class="img-responsive expenses-detail__evidence-photo">
+        </div>
+
+    </section>
+</ion-content>

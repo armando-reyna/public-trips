@@ -1,0 +1,63 @@
+<!-- <ion-header>
+    <ion-navbar>
+
+        <ion-title>
+            <img class="travels__title-logo-image" src="assets/logo-inteliviajes.svg">
+        </ion-title>
+
+    </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button (click)="closeSelectInvoices()">
+                <ion-icon name="arrow-back"></ion-icon> Atrás
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <section class="page-wrapper select-expenses">
+
+        <div class="travels__row travels__title">
+            Añade una factura
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Selecciona una factura para asociar.
+        </div>
+
+        <div class="travels__row travels__list">
+            <ion-list class="travels__full-width">
+                <ion-item-sliding *ngFor="let invoice of _currentInvoices" #slidingItem>
+
+                    <ion-item class="travels__item-md" (click)="selectInvoice(invoice)">
+
+                        <div class="travels__row travels__item">
+                            <div class="travels__row travels__item-container">
+
+                                <!-- Left side -->
+                                <div class="travels__column invoices__left-size">
+                                    <div class="travels__row travels__item-title">{{ invoice['establishment'] }}</div>
+                                    <div class="travels__row travels__item-subtitle">{{ invoice['rfcReceiver'] }}</div>
+                                </div>
+
+                                <!-- Right side -->
+                                <div class="travels__column invoices__amount-side">
+                                    <div class="travels__row invoices__amount-text">{{ invoice['total'] | currency:'USD':true }}</div>
+                                    <div class="travels__row invoices__amount-text">{{ invoice['dateInvoice'] }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ion-item>
+
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+
+    </section>
+</ion-content>

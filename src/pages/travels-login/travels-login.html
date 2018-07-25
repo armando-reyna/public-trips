@@ -1,0 +1,70 @@
+
+<ion-content>
+    <section class="page-wrapper travels travels--full-height">
+        <!-- Intelivijaes logo -->
+        <div class="travels__row travels__center">
+            <img class="login__logo" src="assets/logo-inteliviajes.svg">
+        </div>
+
+        <!-- Form login -->
+        <div class="travels__row travels__center">
+            <form
+                id="formLogin"
+                [formGroup]="_formLoginGroup"
+                (ngSubmit)="login()"
+                novalidate>
+
+                <input
+                    type="text"
+                    placeholder="Tu correo electrónico"
+                    id="username"
+                    name="username"
+                    formControlName="username"
+                    [(ngModel)] = "_lastUsername">
+
+                <input
+                    type="password"
+                    placeholder="Tu contraseña"
+                    id="password"
+                    name="password"
+                    formControlName="password">
+
+                <div class="travels__row travels__center">
+                    <button
+                        type="button"
+                        name="buttonLogin"
+                        (click)="login()"
+                        class="login__button"
+                        [disabled]="!_formLoginGroup.valid || _loading">
+                        {{ _loginButtonText }}
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div *ngIf="devMode" class="travels__row login__forgot">
+            <div class="travels__row travels__center .login__forgot-text">
+                DEV
+            </div>
+        </div>
+
+        <div class="travels__row login__forgot">
+            <div
+                class="travels__row travels__center .login__forgot-text"
+                (click)="goRecoveryPassword()">
+                ¿Olvidaste tu contraseña?
+            </div>
+        </div>
+
+        <div class="travels__column travels__center login__advertisement">
+            <div>
+                <b>Todos los derechos reservados © 2017 Up Sī Vale.</b><br>
+                Sí Vale y el logotipo de Sí Vale son marcas registradas y propiedad
+                de Sí Vale México (antes Prestaciones Universales, S.A. de C.V.).
+                Consulta nuestro Aviso de privacidad.
+            </div>
+        </div>
+
+    </section>
+</ion-content>

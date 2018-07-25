@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper travels">
+
+        <!-- Send email form content -->
+        <div class="send-email__form" *ngIf="_sendEmailStatus === 'form'">
+            <!-- Send email password instructions -->
+            <div class="travels__row send-email__title">
+                Ingresa el mail al que deseas enviar:
+            </div>
+
+            <!-- Intructions -->
+            <div class="travels__row send-email__instructions">
+                Por favor corrobora los datos antes de enviar el correo.
+            </div>
+
+            <!-- Form login -->
+            <div class="travels__row travels__center">
+                <form
+                    id="formSendEmail"
+                    [formGroup]="_formSendEmailGroup"
+                    (ngSubmit)="sendEmailBussiness()"
+                    novalidate>
+
+                    <input
+                        type="text"
+                        placeholder="Correo electrónico del comercio"
+                        id="emailBussiness"
+                        name="emailBussiness"
+                        formControlName="emailBussiness">
+
+                    <input
+                        type="text"
+                        placeholder="Nombre del comercio"
+                        id="nameBussiness"
+                        name="nameBussiness"
+                        class="send-email__input-black"
+                        formControlName="nameBussiness">
+
+                    <ion-item>
+                        <ion-textarea
+                            placeholder="Escribe una nota al comercio"
+                            id="commentBussiness"
+                            name="commentBussiness"
+                            formControlName="commentBussiness"
+                            class="travels__form-textArea--white send-email__margin-top-item"
+                            rows="3">
+                        </ion-textarea>
+                    </ion-item>
+
+                    <div class="travels__row travels__center">
+                        <button
+                            type="button"
+                            name="buttonRecovery"
+                            (click)="sendEmailBussiness()"
+                            class="send-email__button"
+                            [disabled]="!_formSendEmailGroup.valid || _loading">
+                            {{ _sendEmailButtonText }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Recovery success message -->
+        <div class="send-email__success" *ngIf="_sendEmailStatus === 'success'">
+            <!-- Recovery password instructions -->
+            <div class="travels__row send-email__title">¡Muy bien!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row send-email__instructions">
+                El correo se ha envíado al comercio.
+            </div>
+
+            <div class="travels__row travels__center">
+                <!-- <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goProfile()"
+                    class="send-email__button">
+                    Regresar
+                </button> -->
+            </div>
+        </div>
+
+
+    </section>
+</ion-content>

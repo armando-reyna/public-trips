@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>C55F171E-FEC7-49D3-A156-4D6E914EC491</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M276,11.9754252 C276,12.141777 275.90625,12.3232514 275.71875,12.519849 L271.792067,16.5349716 L272.722356,22.2060492 C272.729567,22.2589792 272.733173,22.3345935 272.733173,22.432892 C272.733173,22.5916821 272.695313,22.7258979 272.619591,22.8355384 C272.54387,22.945179 272.433894,23 272.289663,23 C272.152644,23 272.008414,22.9546309 271.856971,22.863894 L267,20.1871454 L262.143029,22.863894 C261.984375,22.9546309 261.840144,23 261.710337,23 C261.558894,23 261.445312,22.945179 261.369591,22.8355384 C261.29387,22.7258979 261.256009,22.5916821 261.256009,22.432892 C261.256009,22.3875235 261.263221,22.3119093 261.277644,22.2060492 L262.207933,16.5349716 L258.270433,12.519849 C258.090144,12.3156898 258,12.1342154 258,11.9754252 C258,11.6956524 258.201923,11.5217389 258.605769,11.4536863 L264.036058,10.6257091 L266.469952,5.46502839 C266.606971,5.15500969 266.783654,5 267,5 C267.216346,5 267.393029,5.15500969 267.530048,5.46502839 L269.963942,10.6257091 L275.394231,11.4536863 C275.798077,11.5217389 276,11.6956524 276,11.9754252 L276,11.9754252 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="18" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="App-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Agregar-parada---En-curso" transform="translate(-294.000000, -140.000000)" stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF">
+            <g id="search-copy" transform="translate(16.000000, 127.000000)">
+                <g id="Group-4" transform="translate(20.000000, 8.000000)">
+                    <use id="favorite-filled" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

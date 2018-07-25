@@ -1,0 +1,121 @@
+travels-list-movements-page {
+
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .movements {}
+
+    .movements__card-data {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .movements__card-data--title {
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .movements__card-data--text {
+        font-family: 'AvenirNext';
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .movements__card-data-right {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .movements__card-data-text-amount {
+        font-size: 24px;
+        text-align: right;
+    }
+
+    .movements__item {
+        border-bottom: solid 1px rgba(175, 175, 175, 0.2);
+        padding-bottom: 5px;
+        padding-top: 6px;
+    }
+    .travels__card {
+        margin-bottom: 20px;
+        &.empty {
+            padding-top: 0;
+            padding-bottom: 0;
+            .travels__card-title {
+                border: none;
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin: 0;
+            }
+        }
+    }
+    .travels__card-title {
+        margin-bottom: 5px;
+        height: 50px;
+    }
+
+    .movements__item-title {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .movements__item-subtitle {
+        font-family: 'AvenirNext';
+        font-size: 9px;
+        font-weight: 300;
+        letter-spacing: -0.1px;
+        text-align: right;
+        color: #757575;
+    }
+
+    .movements__item-amount {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        text-align: right;
+        color: #212121;
+        align-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .movements__amount-side {
+        width: 100px;
+    }
+
+    .movements__item-city {
+        font-family: 'AvenirNext';
+        font-size: 9px;
+        font-weight: 300;
+        letter-spacing: -0.1px;
+        text-align: right;
+        color: #757575;
+        align-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>11F57682-194B-47E0-85A3-09A1EEC87FCE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Estacion-gas-card" transform="translate(-325.000000, -46.000000)" fill="#4688F1">
+            <g transform="translate(18.000000, 0.000000)" id="Group-9">
+                <g transform="translate(2.000000, 45.000000)">
+                    <g id="Group-7" transform="translate(305.000000, 0.000000)">
+                        <g id="direction-small">
+                            <path d="M29.565,14.935 L16.065,1.435 C15.48,0.85 14.535,0.85 13.95,1.435 L0.45,14.935 C-0.135,15.52 -0.135,16.465 0.45,17.05 L13.95,30.55 C14.535,31.135 15.48,31.135 16.065,30.55 L29.565,17.05 C30.15,16.48 30.15,15.535 29.565,14.935 L29.565,14.935 Z M18,19.75 L18,16 L12,16 L12,20.5 L9,20.5 L9,14.5 C9,13.675 9.675,13 10.5,13 L18,13 L18,9.25 L23.25,14.5 L18,19.75 L18,19.75 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

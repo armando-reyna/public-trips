@@ -1,0 +1,282 @@
+travels-expenses-detail-page {
+
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    .travels__item {
+        padding: 10px 0;
+    }
+    .expenses-detail {}
+
+    .travels__card-title {
+        position: relative;
+        label {
+            font-family: KabelITCbyBT-Demi;
+            font-size: 19px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 0.95;
+            letter-spacing: -0.2px;
+            text-align: right;
+            color: #afafaf;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            &.yellow {
+                color: #fcbf6c;
+            }
+            &.green {
+                color: #7eb69f;
+            }
+            &.red {
+                color: #f06f67;
+            }
+        }
+    }
+    .expenses-detail__image-content {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .expenses-detail__evidence-photo {
+        height: 400px;
+        margin-bottom: 20px;
+    }
+
+    .expenses-detail__name-event {
+        font-family: 'AvenirNext';
+        font-size: 24px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .expenses-detail__title {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .expenses-detail__text {
+        font-family: 'AvenirNext';
+        font-size: 18px;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #afafaf;
+    }
+
+    .expenses-detail__text--amount {
+        font-family: 'AvenirNext';
+        font-size: 23px;
+        line-height: 0.91;
+        letter-spacing: -0.5px;
+        text-align: left;
+        color: #f5a257;
+    }
+
+    .label-md {
+        margin-bottom: 0px!important;
+        margin-top: 5px;
+    }
+
+    .expenses-detail__left-size {
+        // width: 270px;
+        width: 70%;
+    }
+
+    .expenses-detail__amount-side {
+        // width: 100px;
+    }
+
+    .expenses-detail__item-container {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .expenses-detail__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .expenses-detail__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+    .expenses-detail__status {
+        padding-bottom: 7px;
+    }
+
+    .expenses-detail__status--aproved {
+        background-color: rgba(245, 240, 240, 0.6);
+        // background-color: rgba(126, 182, 159, 0.11);
+        // color: #7eb69f;
+        padding-top: 4px;
+        color: #757575;
+    }
+
+    .expenses-detail__status--review {
+        background-color: rgba(245, 240, 240, 0.6);
+        padding-top: 4px;
+        color: #757575;
+        // background-color: rgba(252, 191, 108, 0.11);
+        // color: #fcbf6c;
+    }
+
+    .expenses-detail__status--verify {
+        background-color: rgba(240, 111, 103, 0.11);
+        color: #f06f67;
+    }
+
+    .expenses-detail__status-text {
+        font-family: 'KabelITCbyBT-Demi';
+        font-size: 11px;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 2px;
+    }
+
+    .expenses-detail__transaction-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+
+        width: 100%;
+        height: 50px;
+        // margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        background-color: #f5f6fa;
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25), 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+
+        font-family: 'AvenirNext';
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.38;
+        letter-spacing: -0.1px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .expenses-detail__transaction-left {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+    }
+
+    .expenses-detail__transaction-title {
+        font-family: 'AvenirNext';
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.38;
+        letter-spacing: -0.1px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .expenses-detail__transaction-light {
+        font-family: 'AvenirNext';
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.38;
+        letter-spacing: -0.1px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .expenses-detail__transaction-subtitle {
+        font-family: 'AvenirNext';
+        font-size: 9px;
+        font-weight: 300;
+        line-height: 1.42;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #6a6a6a;
+    }
+
+    .expenses-detail__transaction-right {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 80px;
+        align-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .invoices__container {
+        display: flex;
+        // border: 1px solid green;
+    }
+
+    .invoices__left-size {
+        flex-grow: 1;
+        width: 100px;
+        // border: 1px solid red;
+    }
+
+    .invoices__amount-side {
+        width: 100px;
+        min-width: 100px;
+        // border: 1px solid blue;
+    }
+
+    .invoices__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 10px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .invoices__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+}

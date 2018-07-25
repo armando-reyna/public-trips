@@ -1,0 +1,65 @@
+
+travels-profile-page {
+    ion-refresher-content {
+        margin-top: 75px;
+    }
+    
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .profile {}
+
+    .profile__user-name {
+        font-family: 'AvenirNext';
+        font-size: 21px;
+        font-weight: 500;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #757575;
+    }
+
+    .profile__user-info {
+        font-family: 'AvenirNext';
+        font-size: 15px;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #afafaf;
+    }
+
+    .profile__user-birthdate {
+        width: 50%!important;
+    }
+
+    .profile__user-phone {
+        width: 50%!important;
+    }
+
+    .profile__user-mail-title {
+        font-family: 'AvenirNext';
+        font-size: 14px;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: #757575;
+        margin-top: 20px;
+    }
+
+    .profile__user-mail-text {
+        font-family: 'AvenirNext';
+        font-size: 18px;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #afafaf;
+    }
+
+    .profile__rfc-image {
+        width: 100%;
+    }
+
+    .profile__margin-bottom {
+        margin-bottom: 20px;
+    }
+
+}

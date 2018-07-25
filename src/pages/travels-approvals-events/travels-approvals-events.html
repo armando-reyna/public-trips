@@ -1,0 +1,69 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="getEvents($event)" pullMin="150">
+        <ion-refresher-content
+        closeDuration="1000"
+        pullingIcon="ion-refresh"
+        refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <section class="page-wrapper events">
+        <div class="travels__row travels__title">
+            Informes
+        </div>
+        <div class="travels__row travels__subtitle">
+            Aprueba los informes de tus colaboradores.
+        </div>
+        <div class="travels__row travels__list">
+            <ion-list class="travels__full-width">
+                <ion-item-sliding *ngFor="let event of _currentEvents">
+
+                    <ion-item class="travels__item-md" (click)="goToDetailEvent(event)">
+
+                        <div class="travels__row travels__item">
+                            <div class="travels__row travels__item-container">
+
+                                <!-- Left side -->
+                                <div class="travels__column events__left-size">
+                                    <div class="travels__row travels__item-title">{{ event.name }}</div>
+                                    <div class="travels__row travels__item-name">{{ event.user.completeName }}</div>
+                                    <div class="travels__row travels__item-subtitle">
+                                        De <span class="travels__item-subtitle--light">{{ getDateFormat(event.dateStart) }}</span>
+                                        a  <span class="travels__item-subtitle--light">{{ getDateFormat(event.dateEnd) }}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right side -->
+                                <div class="travels__column events__amount-side">
+                                    <div class="travels__row events__amount-title">Monto total</div>
+                                    <div class="travels__row events__amount-text">{{ getTotalAmount(event['spendings']) | currency:'USD':true }}</div>
+                                    <!-- <div class="travels__row events__amount-title">Monto comprobado</div>
+                                    <div class="travels__row events__amount-text">$0</div> -->
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="travels__row events__status events__status--aproved" *ngIf="event.approvalStatusId === 3">
+                            <div class="travels__column events__status-text">Aprobado</div>
+                        </div>
+
+                        <div class="travels__row events__status events__status--review" *ngIf="event.approvalStatusId === 2">
+                            <div class="travels__column events__status-text">En revisión</div>
+                        </div>
+
+                        <div class="travels__row events__status events__status--verify" *ngIf="event.approvalStatusId === 4">
+                            <div class="travels__column events__status-text">Verificar</div>
+                        </div>
+
+                    </ion-item>
+
+                    <ion-item-options side="right" *ngIf="event.approvalStatusId === 1 || event.approvalStatusId === 4">
+                        <button ion-button class="travels__list-button-delete" (click)="deleteEvent(event)">Eliminar</button>
+                    </ion-item-options>
+
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+    </section>
+</ion-content>

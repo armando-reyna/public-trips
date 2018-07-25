@@ -1,0 +1,439 @@
+/*
+  Ionic styles
+*/
+ion-nav {
+  &.no-connection {
+    filter: blur(6px);
+    &:before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, .2);
+      position: absolute;
+    }
+  }
+}
+ion-navbar.toolbar {
+  padding-top: 0 !important;
+  min-height: 56px !important;
+}
+.toolbar-content-md {
+  // position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+div.fixed-content,
+div.scroll-content {
+  margin-top: 56px !important;
+}
+ion-header {
+  &:after {
+    content: none !important;
+  }
+}
+
+ion-title {
+  img {
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+ion-content {
+  background-color: #F2F2F4 !important;
+}
+
+.button-inner {
+    color: #f59100;
+    text-transform: none;
+    font-family: 'AvenirNext';
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.page-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.travels {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.travels__with-50 {
+    width: 50%!important;
+}
+
+.travels__width-100 {
+    width: 100%;
+}
+
+.travels__heigth-50px {
+    height: 50px;
+}
+
+.travels__top-space {
+    margin-top: 20px;
+}
+
+.travels__title-logo-image {
+    height: 45px;
+    margin: auto;
+}
+
+.travels__row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.travels__column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.travels__center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.travels__space-around {
+    justify-content: space-around;
+}
+
+.travels__title {
+    font-family: 'KabelITCbyBT-Demi';
+    font-size: 20px;
+    text-align: left;
+    color: #f8a163;
+    margin-top: 20px;
+
+}
+
+.travels__subtitle {
+    font-family: 'AvenirNext';
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    color: #757575;
+}
+
+.travels__card {
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.travels__card-title {
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #9b9b9b;
+    border-bottom: solid 1px rgba(175, 175, 175, 0.2);
+    margin-bottom: 20px;
+    height: 40px;
+    align-items: center;
+    align-content: center;
+
+}
+
+.travels__card-title-outside {
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #757575;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.travels__button-orange {
+    border-radius: 10px;
+    background-color: #f0977a;
+    font-family: 'AvenirNext';
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #ffffff;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.travels__button-blue {
+    border-radius: 10px;
+    background-color: #7FCBD7;
+    font-family: 'AvenirNext';
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #ffffff;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.travels__button-red {
+    height: 40px;
+    border-radius: 10px;
+    background-color: #e2726a;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    font-family: 'AvenirNext';
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.travels__form {
+    margin-top: 20px;
+}
+
+.travels__form-label {
+    font-family: 'AvenirNext';
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.travels__form-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+	background-color: #f5f6fa;
+	box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+
+    font-family: 'AvenirNext';
+    font-size: 16px;
+    line-height: 1.31;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border: none;
+}
+
+.travels__form-input-amount {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.travels__form-textArea {
+    // height: 100px;
+    border-radius: 6px;
+	background-color: #f5f6fa;
+	box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+
+    font-family: 'AvenirNext';
+    font-size: 16px;
+    line-height: 1.31;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border: none;
+}
+
+.travels__form-textArea--white {
+    border-radius: 4px;
+	border: solid 1px #dcdcdc!important;
+    background-color: #FFFFFF;
+
+    font-family: 'AvenirNext';
+    font-size: 16px;
+    line-height: 1.31;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border: none;
+}
+
+.item-inner {
+    box-shadow: none!important;
+}
+
+.travels__form-datepicker {
+    border-radius: 6px;
+    background-color: #f5f6fa;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+// List Item
+.travels__list {
+    margin-top: 20px;
+}
+
+.travels__full-width {
+    width: 100%;
+}
+
+.item-md{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.travels__item-md {
+    height: 100%;
+}
+
+.item-inner {
+    border: none!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+ion-item-sliding {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+ion-item-options {
+    border-bottom: none!important;
+}
+
+ion-item-options .button {
+    height: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border: none!important;
+}
+ion-item {
+    width: 100%;
+}
+ion-label {
+    margin-right: 0px!important;
+    width: 100%;
+}
+
+.travels__list-button-delete {
+    border-radius: 6px;
+    background-color: #e36162;
+    font-family: 'AvenirNext';
+    font-size: 15px;
+    text-align: left;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100% !important;
+    margin: 0px!important;
+}
+
+.travels__list-button-delete span {
+    color: #FFFFFF;
+}
+
+.travels__item {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.travels__item-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.travels__item-title {
+    font-family: 'AvenirNext';
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    color: #757575;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.travels__item-name {
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: #757575;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.travels__item-subtitle {
+    font-family: 'AvenirNext';
+    font-size: 12px;
+    font-weight: 900;
+    text-align: left;
+    color: #757575;
+}
+
+.travels__item-subtitle--light {
+    font-weight: 300;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+ion-select {
+    max-width: 95%;
+    font-family: 'AvenirNext';
+    font-size: 12px;
+    line-height: 1.31;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #757575;
+}
+
+.alert-radio-label {
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    line-height: 1.31;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #757575;
+}
+.swiper-container-3d .swiper-slide-shadow-right, .swiper-container-3d .swiper-slide-shadow-left {
+    background-image: none !important;
+}

@@ -1,0 +1,159 @@
+@-moz-keyframes rotator {
+    0% {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@-webkit-keyframes rotator {
+    0% {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes rotator {
+    0% {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 124;
+    }
+    50% {
+        stroke-dashoffset: 30;
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 124;
+        -moz-transform: rotate(450deg);
+        -ms-transform: rotate(450deg);
+        -o-transform: rotate(450deg);
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+
+.path {
+  stroke-dasharray: 124;
+  stroke-dashoffset: 0;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  stroke: rgb(0, 165, 206);
+  fill: transparent;
+  -moz-transition: fill 1s ease-in-out, stroke-width 0.5s ease-in-out;
+  -o-transition: fill 1s ease-in-out, stroke-width 0.5s ease-in-out;
+  -webkit-transition: fill 1s ease-in-out, stroke-width 0.5s ease-in-out;
+  transition: fill 1s ease-in-out, stroke-width 0.5s ease-in-out;
+}
+.circleLoader {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  opacity: 0;
+  -moz-transition: 0.5s opacity ease-in-out;
+  -o-transition: 0.5s opacity ease-in-out;
+  -webkit-transition: 0.5s opacity ease-in-out;
+  transition: 0.5s opacity ease-in-out;
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  ion-icon {
+    font-family: "Ionicons";
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    line-height: 1;
+    letter-spacing: 0;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+  &.success {
+    opacity: 1;
+    .path {
+      fill: #94bf6e;
+      stroke-width: 0;
+    }
+    ion-icon {
+      opacity: 1;
+    }
+  }
+  &.error {
+    opacity: 1;
+    .path {
+      fill: rgb(217, 83, 79);
+      stroke-width: 0;
+    }
+    ion-icon {
+      opacity: 1;
+    }
+  }
+  &.wait {
+    opacity: 1;
+    .path {
+      -moz-animation: dash 1.4s ease-in-out infinite;
+      -o-animation: dash 1.4s ease-in-out infinite;
+      -webkit-animation: dash 1.4s ease-in-out infinite;
+      animation: dash 1.4s ease-in-out infinite;
+    }
+    .spinner {
+      -moz-animation: rotator 1.4s linear infinite;
+      -o-animation: rotator 1.4s linear infinite;
+      -webkit-animation: rotator 1.4s linear infinite;
+      animation: rotator 1.4s linear infinite;
+    }
+  }
+}

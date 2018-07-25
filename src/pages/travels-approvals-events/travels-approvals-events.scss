@@ -1,0 +1,94 @@
+.alert-head {
+    font-family: 'AvenirNext';
+    font-size: 18px;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #afafaf;
+}
+
+ion-refresher-content {
+    margin-top: 75px;
+}
+
+travels-approvals-events-page {
+    ion-header {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .toolbar-background-md {
+            background: white;
+        }
+    }
+    ion-content {
+        background-image: url("../assets/inteliviajes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .label-md {
+        margin-bottom: 0px!important;
+        margin-top: 5px;
+    }
+
+    .events {}
+
+    .events__left-size {
+        // width: 270px;
+        width: 70%;
+    }
+
+    .events__amount-side {
+        width: 100px;
+    }
+
+    .events__amount-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 10px;
+        font-weight: 900;
+        text-align: right;
+        color: #757575;
+    }
+
+    .events__amount-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        font-family: 'AvenirNext';
+        font-size: 12px;
+        font-weight: 300;
+        text-align: right;
+        color: #757575;
+    }
+
+    .events__status {
+        padding-bottom: 7px;
+    }
+
+    .events__status--aproved {
+        background-color: rgba(126, 182, 159, 0.11);
+        color: #7eb69f;
+    }
+
+    .events__status--review {
+        background-color: rgba(252, 191, 108, 0.11);
+        color: #fcbf6c;
+    }
+
+    .events__status--verify {
+        background-color: rgba(240, 111, 103, 0.11);
+        color: #f06f67;
+    }
+
+    .events__status-text {
+        font-family: 'KabelITCbyBT-Demi';
+        font-size: 11px;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+}

@@ -1,0 +1,67 @@
+<!--
+  Generated template for the TravelsAdvancesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="ionViewWillEnter($event)" pullMin="150">
+      <ion-refresher-content
+      closeDuration="1000"
+      pullingIcon="ion-refresh"
+      refreshingSpinner="circles">
+      </ion-refresher-content>
+  </ion-refresher>
+  <h1>Anticipos</h1>
+  <p>Consulta tus solicitudes de anticipo y su estatus</p>
+  <button *ngIf="cardAvailable" ion-button icon-end (click)="goToAdvanceCreate()">
+    Solicitar anticipo
+    <ion-icon name="logo-usd"></ion-icon>
+  </button>
+  <section class="list">
+    <label *ngIf="pending[0]" class="title">Anticipos pendientes.</label>
+    <div *ngFor="let advance of pending"
+      (click)="goToPendingAdvanceDetail(advance.id)"
+      class="item"
+        [ngClass]="{
+          waiting: advance.advanceStatus.id === 1,
+          accepted: advance.advanceStatus.id === 2,
+          rejected: advance.advanceStatus.id === 3,
+          accepted: advance.advanceStatus.id === 4
+      }"
+      >
+      <label class="title">{{ advance.name }}</label>
+      <label class="date">{{ advance.transferDate | date }}</label>
+      <div class="amount">
+        <label>{{ advance.amountRequired | currency:'USD':true }}</label>
+        <ion-icon class="home__button-icon" name="logo-usd"></ion-icon>
+      </div>
+    </div>
+    <label *ngIf="advances[0]" class="title">Mis anticipos.</label>
+    <div *ngFor="let advance of advances"
+      (click)="goToAdvanceDetail(advance.id)"
+      class="item"
+      [ngClass]="{
+          waiting: advance.advanceStatus.id === 1,
+          accepted: advance.advanceStatus.id === 2,
+          rejected: advance.advanceStatus.id === 3,
+          accepted: advance.advanceStatus.id === 4
+      }"
+      >
+      <label class="title">{{ advance.name }}</label>
+      <label class="date">{{ advance.transferDate | date }}</label>
+      <div class="amount">
+        <label>{{ advance.amountRequired | currency:'USD':true }}</label>
+        <ion-icon class="home__button-icon" name="logo-usd"></ion-icon>
+      </div>
+    </div>
+  </section>
+</ion-content>

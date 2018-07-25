@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>8C6D3A94-6B80-447E-97A5-A12EABC25C1F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="10" cy="10" r="10"></circle>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gas-icon" transform="translate(1.000000, 0.000000)">
+            <g>
+                <g id="Oval-21">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" mask="url(#mask-3)" stroke-width="1.17647059" fill="#E53935" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="estaciones-activo" transform="translate(3.529412, 2.941176)">
+                    <rect id="bounds" x="0" y="0" width="14.1176471" height="14.1176471"></rect>
+                    <path d="M3.78676471,1.76470588 C3.20401961,1.76470588 2.74509804,2.23280588 2.74509804,2.82720588 L2.74509804,10.1647059 L8.82352941,10.1647059 L8.82352941,2.82720588 C8.82352941,2.23280588 8.36460784,1.76470588 7.78186275,1.76470588 L3.78676471,1.76470588 L3.78676471,1.76470588 Z M4.09926471,2.76470588 L7.46936275,2.76470588 C7.66544118,2.76470588 7.84313725,2.94595588 7.84313725,3.14595588 L7.84313725,5.18345588 C7.84313725,5.38345588 7.66544118,5.56470588 7.46936275,5.56470588 L4.09926471,5.56470588 C3.90318627,5.56470588 3.7254902,5.38345588 3.7254902,5.18345588 L3.7254902,3.14595588 C3.7254902,2.94595588 3.90318627,2.76470588 4.09926471,2.76470588 L4.09926471,2.76470588 Z M9.35661765,2.82095588 L9.0747549,3.10845588 L10.1960784,4.24595588 L10.1960784,5.88345588 C10.1960784,6.11045588 10.2884804,6.34645588 10.4473039,6.50845588 L11.372549,7.44595588 L11.372549,8.96470588 C11.372549,9.41330588 11.0280392,9.76470588 10.5882353,9.76470588 C10.1484314,9.76470588 9.80392157,9.41330588 9.80392157,8.96470588 L9.80392157,7.96470588 C9.80392157,7.43310588 9.48058824,6.99505588 9.01960784,6.83345588 L9.01960784,7.27095588 C9.25470588,7.40775588 9.41176471,7.66350588 9.41176471,7.96470588 L9.41176471,8.96470588 C9.41176471,9.63750588 9.92862745,10.1647059 10.5882353,10.1647059 C11.2478431,10.1647059 11.7647059,9.63750588 11.7647059,8.96470588 L11.7647059,5.64595588 C11.7647059,5.41895588 11.6723039,5.18295588 11.5134804,5.02095588 L9.35661765,2.82095588 L9.35661765,2.82095588 Z M2.54901961,10.5647059 C2.44078431,10.5647059 2.35294118,10.6541059 2.35294118,10.7647059 L2.35294118,11.5647059 C2.35294118,11.6753059 2.44078431,11.7647059 2.54901961,11.7647059 L9.01960784,11.7647059 C9.12803922,11.7647059 9.21568627,11.6753059 9.21568627,11.5647059 L9.21568627,10.7647059 C9.21568627,10.6541059 9.12803922,10.5647059 9.01960784,10.5647059 L2.54901961,10.5647059 L2.54901961,10.5647059 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

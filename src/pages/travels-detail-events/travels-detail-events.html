@@ -1,0 +1,125 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons *ngIf="_currentEvent['approvalStatus']['id'] !== 3 && _currentEvent['approvalStatus']['id'] !== 2" end>
+            <button (click)="editEvent()" ion-button>
+                Editar
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <section class="page-wrapper detail-events">
+        <div class="travels__row travels__title">
+            Detalle del informe
+        </div>
+        <div class="travels__row travels__subtitle">
+            Consulta los detalles de tu informe y agrega gastos.
+        </div>
+        <div class="travels__column travels__card">
+            <div class="travels__row travels__card-title">
+                Informe de gastos
+            </div>
+            <div class="travels__row detail-events__name-event">
+                {{ _currentEvent['name'] }}
+            </div>
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="detail-events__title">Fecha inicio</div>
+                    <div class="detail-events__text">{{ getDateFormat(_currentEvent['dateStart']) }}</div>
+                </div>
+                <div class="travels__column travels__with-50">
+                    <div class="detail-events__title">Fecha término</div>
+                    <div class="detail-events__text">{{ getDateFormat(_currentEvent['dateEnd']) }}</div>
+                </div>
+            </div>
+            <div class="travels__row travels__top-space" *ngIf="_currentEvent['user']">
+                <div class="travels__column travels__with-50">
+                    <div class="detail-events__title">Viajero</div>
+                    <div class="detail-events__text">{{ _currentEvent['user']['completeName'] }}</div>
+                </div>
+                <div class="travels__column travels__with-50">
+                    <div class="detail-events__title">Área</div>
+                    <div class="detail-events__text" *ngIf="_currentEvent['user']['costCenter']">{{ _currentEvent['user']['costCenter']['name'] }}</div>
+                </div>
+            </div>
+            <div class="travels__row travels__top-space" *ngIf="_currentEvent['approvalStatus']['id'] === 2">
+                <div class="travels__column">
+                    <div class="detail-events__title-orange">En revisión</div>
+                    <div class="detail-events__text">En este momento tu Admin está revisando tu comprobación, esto puede tardar unos días.</div>
+                </div>
+            </div>
+            <div class="travels__row travels__top-space" *ngIf="_currentEvent['approvalStatus']['id'] === 3">
+                <div class="travels__column">
+                    <div class="detail-events__title-blue">Aprobado</div>
+                    <div class="detail-events__text">Tu informe ha sido aprobado en unos días obtendras tu reembolso.</div>
+                </div>
+            </div>
+            <div class="travels__row travels__top-space" *ngIf="_currentEvent['approvalStatus']['id'] === 4">
+                <div class="travels__column">
+                    <div class="detail-events__title-red">Verificar</div>
+                    <div class="detail-events__text">Tu admin ha marcado un gasto como incorrecto porfavor verifica que es lo que está mal.</div>
+                </div>
+            </div>
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="detail-events__title">Monto total</div>
+                    <div class="detail-events__text--amount">{{ _totalAmount | currency:'USD':true }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="travels__card-title-outside">
+            Gastos asociados
+        </div>
+        <div class="travels__row travels__list" *ngIf="_currentExpenses.length">
+            <ion-list class="travels__full-width">
+                <ion-item-sliding *ngFor="let expense of _currentExpenses; let i = index" [attr.data-index]="i" (click)="selectExpense(expense)">
+                    <ion-item class="travels__item-md">
+                        <div class="travels__row travels__item">
+                            <div class="travels__row travels__item-container detail-events__item-container">
+                                <!-- Left side -->
+                                <div class="travels__column detail-events__left-size">
+                                    <div class="travels__row travels__item-title">{{ expense.name }}</div>
+                                    <div class="travels__row travels__item-subtitle">
+                                        <span class="travels__item-subtitle--light" *ngIf="expense.transaction">
+                                            <ion-icon name="md-link"></ion-icon>
+                                            Transacción asociada
+                                        </span>
+
+                                        <span class="travels__item-subtitle--light" *ngIf="!expense.transaction">
+                                            Transacción no asociada
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Right side -->
+                                <div class="travels__column detail-events__amount-side">
+                                    <div class="travels__row detail-events__amount-title">{{ expense['spendingTotal']  | currency:'USD':true }}</div>
+                                    <div class="travels__row detail-events__amount-text"> {{ getFormatDate(expense['dateStart']) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="travels__row detail-events__status detail-events__status--aproved" *ngIf="!expense.event">
+                            <div class="travels__column detail-events__status-text">No asociado a un informe de gastos</div>
+                        </div>
+                        <div class="travels__row detail-events__status detail-events__status--review" *ngIf="expense.event">
+                            <div class="travels__column detail-events__status-text">{{ expense.event['name'] }}</div>
+                            <div class="travels__column detail-events__status-text"></div>
+                        </div>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+        <div class="travels__row travels__row--approvals" *ngIf="_approval">
+            <button class="travels__button--approval-accept" (click)="approvalEvent()">
+                Aprobar<ion-icon class="travels__button-approval-icon" name="checkmark"></ion-icon>
+            </button>
+            <button class="travels__button--approval-reject" (click)="rejectEvent()">
+                Rechazar<ion-icon name="checkmark"></ion-icon>
+            </button>
+        </div>
+        <div class="travels__column" *ngIf="(_currentEvent['approvalStatus']['id'] === 1 || _currentEvent['approvalStatus']['id'] === 4) && !_approval">
+            <button class="travels__row travels__button-blue travels__width-100 travels__heigth-50px" (click)="sendApprobal()">
+                Enviar a aprobación
+            </button>
+        </div>
+    </section>
+</ion-content>

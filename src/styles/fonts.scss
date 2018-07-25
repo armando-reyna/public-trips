@@ -1,0 +1,74 @@
+/*
+  San Francisco
+*/
+
+/** San Francisco Display Regular */
+@font-face {
+  font-family: "SFD";
+  font-weight: 400;
+  src: url("../assets/fonts/SF-UI-Display-Regular.otf");
+}
+
+/** San Francisco Display Medium */
+@font-face {
+  font-family: "SFD";
+  font-weight: 500;
+  src: url("../assets/fonts/SF-UI-Display-Medium.otf");
+}
+
+/** San Francisco Display Semibold */
+@font-face {
+  font-family: "SFD";
+  font-weight: 600;
+  src: url("../assets/fonts/SF-UI-Display-Semibold.otf");
+}
+
+/** San Francisco Text Regular */
+@font-face {
+  font-family: "SFT";
+  font-weight: 400;
+  src: url("../assets/fonts/SFUIText-Regular.ttf");
+}
+
+/** San Francisco Text Medium */
+@font-face {
+  font-family: "SFT";
+  font-weight: 500;
+  src: url("../assets/fonts/SFUIText-Medium.ttf");
+}
+
+/** San Francisco Text Semibold */
+@font-face {
+  font-family: "SFT";
+  font-weight: 600;
+  src: url("../assets/fonts/SFUIText-Semibold.ttf");
+}
+
+
+/*
+  OCRA Extended
+*/
+/** San Francisco Text Semibold */
+@font-face {
+  font-family: "Ocra Extended";
+  src: url("../assets/fonts/ocra_extended.ttf"),
+        url("../assets/fonts/ocra_extended.woff");
+}
+
+
+/**
+ * AvenirNext FONT
+ */
+ @font-face {
+    font-family: 'AvenirNext';
+    src: url('../assets/fonts/AvenirNext-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+ }
+
+ @font-face {
+ 	font-family: 'KabelITCbyBT-Demi';
+ 	src: url('../assets/fonts/ItcKabelLT-Demi.woff2') format('woff2');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }

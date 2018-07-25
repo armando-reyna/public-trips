@@ -1,0 +1,120 @@
+<ion-header *ngIf="_firstStatus === 'form'">
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper travels">
+
+        <!-- Intelivijaes logo -->
+        <div class="travels__row travels__center">
+            <img class="first__logo" src="assets/logo-inteliviajes.svg">
+        </div>
+
+        <!-- first success message -->
+        <!-- <div class="first__success" *ngIf="_param === 'success'"> -->
+        <div class="first__success">
+            <!-- first password instructions -->
+            <div class="travels__row first__title">¡Muy bien!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row first__instructions">
+                Has agregado una factura a tu listado.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goToHome()"
+                    class="first__button">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+        <div class="first__success" *ngIf="_param === 'fail'">
+            <!-- first password instructions -->
+            <div class="travels__row first__title">¡Oh no!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row first__instructions">
+                Hubo un problema al subir tu factura, por favor intenta más tarde.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goToHome()"
+                    class="first__button">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+        <div class="first__success" *ngIf="_param === 'session'">
+            <!-- first password instructions -->
+            <div class="travels__row first__title">¡Oh no!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row first__instructions">
+                Para subir una factura debes iniciar sesión en inteliviajes.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goLogin()"
+                    class="first__button">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+        <div class="first__success" *ngIf="_param === 'invalidY'">
+            <!-- first password instructions -->
+            <div class="travels__row first__title">¡Oh no!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row first__instructions">
+                El archivo que intentas subir no es permitido como factura,
+                intenta con un pdf o xml.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goToHome()"
+                    class="first__button">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+        <div class="first__success" *ngIf="_param === 'invalidN'">
+            <!-- first password instructions -->
+            <div class="travels__row first__title">¡Oh no!</div>
+
+            <!-- Intructions -->
+            <div class="travels__row first__instructions">
+                El archivo que intentas subir no es permitido como factura,
+                intenta con un pdf o xml.
+            </div>
+
+            <div class="travels__row travels__center">
+                <button
+                    type="button"
+                    name="buttonSuccess"
+                    (click)="goLogin()"
+                    class="first__button">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+    </section>
+</ion-content>

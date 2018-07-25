@@ -1,0 +1,230 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons end class="end-ion-button">
+          <button
+              ion-button
+              id="btnSaveEvent"
+              (click)="saveExpenses()">
+                  Guardar
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="">
+    <section class="page-wrapper create-events expenses-create">
+
+        <form
+            id="createExpenses"
+            [formGroup]="_formCreateGroup"
+            (ngSubmit)="saveExpenses()"
+            novalidate
+            class="travels__form">
+
+            <div class="travels__row travels__form-label">Nombre del gasto</div>
+            <div class="travels__row">
+                <ion-item>
+                <input
+                    type="text"
+                    placeholder="Nombre del gasto"
+                    id="nameExpense"
+                    name="nameExpense"
+                    [(ngModel)]="expense['name']"
+                    formControlName="nameExpense"
+                    class="travels__form-input">
+                </ion-item>
+            </div>
+
+            <div class="travels__row travels__form-label" *ngIf="_currentParams['type'] !== 'sivale'">Método de pago</div>
+            <div class="travels__row" *ngIf="_currentParams['type'] !== 'sivale'">
+                <ion-list>
+                    <ion-item class="travels__form-datepicker">
+                        <ion-select [(ngModel)]="expense['payMethod']['id']" formControlName="payMethod" interface="action-sheet" placeholder="Método de pago" okText="Ok" cancelText="Cancelar">
+                            <ion-option [value]="method['id']" *ngFor="let method of _payMethods">{{ method['name'] }}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+            <div class="travels__row travels__form-label" *ngIf="_currentParams['type'] !== 'sivale'">Fecha de pago</div>
+            <div class="travels__row dateButton" (click)="openDatePicker()" *ngIf="_currentParams['type'] !== 'sivale'">
+                <ion-item class="travels__form-datepicker">
+                    <ion-datetime
+                        [(ngModel)]="date"
+                        displayFormat="DD MMMM YYYY"
+                        pickerFormat="DD MMMM YYYY"
+                        placeholder="Fecha pago"
+                        min="{{ _minYear }}"
+                        max="{{ _maxYear }}"
+                        doneText="Ok"
+                        cancelText="Cancelar"
+                        formControlName="payDate">
+                    </ion-datetime>
+                </ion-item>
+            </div>
+
+
+            <div class="travels__row">
+                <div class="create-events__select">
+                    <div class="travels__row travels__form-label">
+                        Tipo de gasto
+                    </div>
+                    <div class="travels__row">
+                        <ion-list>
+                            <ion-item class="travels__form-datepicker">
+                                <!-- <ion-select formControlName="typeExpense" interface="action-sheet" placeholder="Tipo de gasto" okText="Ok" cancelText="Cancelar"> -->
+                                <ion-select formControlName="typeExpense" placeholder="Tipo de gasto" okText="Ok" cancelText="Cancelar">
+                                    <ion-option [value]="type['id']" *ngFor="let type of _expensesTypes">
+                                        <!-- <ion-icon *ngIf="type['icon']" name="{{ type['icon'] }}"></ion-icon>  -->
+                                        {{ type['name'] }}
+                                    </ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </div>
+
+                <div class="create-events__amount">
+                    <div class="travels__row travels__form-label">
+                        Monto
+                    </div>
+                    <div class="travels__row">
+                        <ion-item>
+                        <input
+                            [textMask]="{mask: travelsConstants.numberMask}"
+                            (blur)="addExpensesItem()"
+                            (keypress)="amountChange($event)"
+                            placeholder="0.00"
+                            id="amountExpense"
+                            name="amountExpense"
+                            formControlName="amountExpense"
+                            class="travels__form-input travels__form-input-amount">
+                        </ion-item>
+                    </div>
+                </div>
+
+                <div class="create-evemts__button-content" (click)="addExpensesItem()">
+                    <div class="travels__button-orange create-events__button-add">+</div>
+                </div>
+
+            </div>
+
+            <div class="travels__row" *ngIf="_expensesItems.length">
+                <div class="create-events__select">
+                    <div class="travels__row travels__form-label">Tipo de gasto</div>
+                </div>
+
+                <div class="create-events__amount">
+                    <div class="travels__row travels__form-label">Monto</div>
+                </div>
+
+                <div class="create-evemts__button-content"></div>
+            </div>
+
+            <div class="travels__row create-events__item-content-data" *ngFor="let item of _expensesItems; let i = index" [attr.data-index]="i">
+                <div class="create-events__select">
+                    <div class="travels__row create-events__item-data-left">
+                        <!-- <ion-icon *ngIf="item['type']['icon']" name="{{ item['type']['icon'] }}"></ion-icon> -->
+                        {{ item['type']['name'] }}</div>
+                </div>
+
+                <div class="create-events__amount">
+                    <div class="travels__row create-events__item-data-right">{{ item['amount'] | currency:'USD':true }}</div>
+                </div>
+
+                <div class="create-evemts__button-content" (click)="deleteExpensesItem(i)">
+                    <div class="travels__button-orange create-events__button-add">
+                        <ion-icon name="trash"></ion-icon>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="travels__row travels__form-label" *ngIf="_expensesItems.length">Monto total</div>
+            <div class="travels__row create-events__label-total-amount" *ngIf="_expensesItems.length">{{ calculateTotalAmount() | currency:'USD':true }}</div>
+            <div class="travels__column" (click)="addTransaction()" *ngIf="_currentParams.type === 'sivale' && !_currentParams['transaction']['numAutorizacion']">
+                <div class="travels__row travels__button-orange create-events__full-width">
+                    <ion-icon name="link"></ion-icon> Asociar a una transacción.
+                </div>
+            </div>
+            <div class="travels__row travels__form-label" *ngIf="_currentParams['transaction']['numAutorizacion']">Transacción</div>
+            <ion-list class="travels__row" *ngIf="_currentParams['transaction']['numAutorizacion']">
+                <ion-item-sliding>
+                    <ion-item class="travels__item-md">
+                        <div class="travels__row">
+                            <button class="create-events__transaction-item">
+                                <div class="create-events__transaction-left">
+                                    <div class="create-events__transaction-title">
+                                        Nº Autorización:
+                                        <span class="create-events__transaction-light"> {{ _currentParams['transaction']['numAutorizacion'] }}</span>
+                                    </div>
+                                    <div class="create-events__transaction-subtitle">
+                                        {{ _currentParams['transaction']['nombreComercio']}}
+                                    </div>
+                                </div>
+                                <div class="create-events__transaction-right">
+                                    <div class="create-events__transaction-title">
+                                        <span class="create-events__transaction-light">{{ _currentParams['transaction']['consumoNeto'] | currency:'USD':true }}</span>
+                                    </div>
+                                    <div class="create-events__transaction-subtitle">
+                                        {{ _currentParams['transaction']['fecha'] }}
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button class="travels__list-button-delete" (click)="deleteTransaction()">Eliminar</button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <div class="travels__row travels__form-label">Comprobantes</div>
+
+            <div class="travels__row">
+                <div class="create-events__select travels__with-50">
+                    <div class="travels__row">
+                        <div class="expenses-create__invoice" (click)="getInvoice()" *ngIf="_invoiceSelected">
+                            <div class="travels__row">{{ _invoiceSelected['establishment'] }}</div>
+                            <div class="travels__row">RFC: <span class="expenses-create__invoice-rfc">{{ _invoiceSelected['rfcReceiver'] }}</span></div>
+                            <div class="travels__row expenses-create__invoice-amount">{{ _invoiceSelected['total'] | currency:'USD':true }}</div>
+                        </div>
+
+                        <div class="expenses-create__square" (click)="getInvoice()" *ngIf="!_invoiceSelected">
+                            <div class="expenses-create__square-inner">
+                                <ion-icon name="document"></ion-icon>
+                                Adjuntar una factura
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-events__amount travels__with-50" *ngIf="!_currentPhoto">
+                    <div class="travels__row">
+                        <div class="expenses-create__square" (click)="getPicture()">
+                            <div class="expenses-create__square-inner">
+                                <ion-icon name="camera"></ion-icon>
+                                Tomar foto del ticket
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-events__amount travels__with-50" *ngIf="_currentPhoto">
+                    <div class="travels__row">
+                        <div class="expenses-create__square" (click)="getPicture()">
+                            <figure>
+                                <img [src]="_currentPhoto" class="img-responsive expenses-create-evidence">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="travels__column" *ngIf="false">
+                <div class="travels__row travels__button-orange create-events__full-width">
+                    Añadir a un informe de gastos
+                </div>
+            </div>
+        </form>
+    </section>
+</ion-content>

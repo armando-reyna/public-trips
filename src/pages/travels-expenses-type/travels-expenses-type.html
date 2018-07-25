@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper expenses-type">
+        <div class="travels__row travels__title">
+            Añadir un gasto
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Selecciona el medio de pago de tu gasto.
+        </div>
+
+        <button *ngIf="cardAvailable" class="expenses-type__button" (click)="goToExpensesTransaction()">
+            <div class="expenses-type__left">
+                <div class="expenses-type__title">
+                    Con producto Sí Vale
+                </div>
+                <div class="expenses-type__subtitle">
+                    (Compra con tarjeta o retiro de efectivo )
+                </div>
+            </div>
+            <div class="expenses-type__right">
+                <img class="expenses-type__logo" src="assets/sivale-white-2.svg">
+            </div>
+        </button>
+
+        <button class="expenses-type__button" (click)="goToExpensesCreate()">
+            <div class="expenses-type__left">
+                <div class="expenses-type__title">
+                    Con otros medios de pago
+                </div>
+            </div>
+            <div class="expenses-type__right">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+            </div>
+        </button>
+    </section>
+</ion-content>

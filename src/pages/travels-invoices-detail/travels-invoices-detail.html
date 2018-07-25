@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <section class="page-wrapper expenses-detail">
+
+        <div class="travels__row travels__title">
+            Detalle de factura
+        </div>
+
+        <div class="travels__row travels__subtitle">
+            Consulta los datos de la factura y sus asociaciones.
+        </div>
+
+        <div class="travels__column travels__card">
+            <div class="travels__row travels__card-title">Información de la factura</div>
+
+            <div class="travels__row invoices-detail__name-event">{{ _currentInvoice['establishment'] }}</div>
+
+            <div class="travels__row invoices-detail__title travels__top-space">RFC</div>
+            <div class="travels__row invoices-detail__text">{{ _currentInvoice['rfcReceiver'] }}</div>
+
+            <div class="travels__row invoices-detail__title travels__top-space">Dirección</div>
+            <div class="travels__row invoices-detail__text">{{ _currentInvoice['fiscalAddress'] }}</div>
+
+            <div class="travels__row invoices-detail__title travels__top-space">Fecha de emisión</div>
+            <div class="travels__row invoices-detail__text">{{ _currentInvoice['dateInvoice'] }}</div>
+
+            <div class="travels__row invoices-detail__title travels__top-space">Lugar de expedición</div>
+            <div class="travels__row invoices-detail__text">{{ _currentInvoice['expeditionAddress'] }}</div>
+
+            <div class="invoices-detail__border"></div>
+
+            <div class="travels__row invoices-detail__title travels__top-space">Subtotal</div>
+            <div class="travels__row invoices-detail__text">{{ _currentInvoice['subtotal'] | currency:'USD':true }}</div>
+
+            <div class="travels__row travels__top-space">
+                <div class="travels__column travels__with-50">
+                    <div class="travels__row invoices-detail__title travels__top-space">IVA</div>
+                    <div class="travels__row invoices-detail__text">{{ _currentInvoice['iva'] | currency:'USD':true }}</div>
+                </div>
+
+                <div class="travels__column travels__with-50">
+                    <div class="travels__row invoices-detail__title travels__top-space">Total</div>
+                    <div class="travels__row invoices-detail__text">{{ _currentInvoice['total'] | currency:'USD':true }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ion-content>
